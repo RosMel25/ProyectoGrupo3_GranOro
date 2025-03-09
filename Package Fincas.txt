@@ -1,0 +1,9 @@
+create or replace NONEDITIONABLE PACKAGE PROCE_FINCAS AS 
+
+    PROCEDURE AGREGAR (pID IN NUMBER, pNOMBRE IN VARCHAR2, pTAMAÑO IN NUMBER, pUBICACION IN VARCHAR2);
+    
+    
+    PROCEDURE LISTAR (cur_FINCAS OUT SYS_REFCURSOR);
+  /* TODO enter package declarations (types, exceptions, methods etc) here */ 
+
+END PROCE_FINCAS;
