@@ -45,3 +45,4 @@ C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacio
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.pdb
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll.config
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmFinca.resources

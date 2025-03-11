@@ -22,9 +22,7 @@ namespace Presentacion
         public Prueba()
         {
             InitializeComponent();
-            this.FincaInfo = new LogicaNegocio.FincaLN.FincaLN();
-            dtINformacion.Columns.Add("Mensaje", typeof(string));
-            Mostrar_Valores.DataSource = CargarFinca();
+           
 
         }
 
@@ -37,23 +35,7 @@ namespace Presentacion
         private void btn_agregar_Click(object sender, EventArgs e)
         {
 
-            int cod = int.Parse(txt_ID.Text);
-            string Nom = txt_NOM.Text;
-            string Tam = txt_TAM.Text;
-            string Ubi = txt_UBI.Text;
-
-            if (cod.Equals("") || Nom.Equals("") || Tam.Equals("") || Ubi.Equals("") )
-            {
-                MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS");
-            }
-            else
-            {
-                FincaInfo.GuardarFinca(new Entidad.Finca.ClsFinca{ No_Finca = cod , Nom_Finca = Nom , Tam_Finca = Tam , Ubi_Finca = Ubi });
-                MessageBox.Show("Finca Agregada con exito");
-            }
-
-
-            Mostrar_Valores.DataSource = CargarFinca();
+          
         }
 
 

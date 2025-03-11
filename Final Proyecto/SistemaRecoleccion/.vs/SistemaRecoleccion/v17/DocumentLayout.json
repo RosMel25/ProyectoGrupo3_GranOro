@@ -1,12 +1,70 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|c:\\users\\aj199\\onedrive\\escritorio\\final proyecto\\sistemarecoleccion\\logicanegocio\\fincaln\\fincaln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|solutionrelative:logicanegocio\\fincaln\\fincaln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|c:\\users\\aj199\\onedrive\\escritorio\\final proyecto\\sistemarecoleccion\\presentacion\\recoleccion\\frmfinca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\recoleccion\\frmfinca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|c:\\users\\aj199\\onedrive\\escritorio\\final proyecto\\sistemarecoleccion\\presentacion\\recoleccion\\frmfinca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\recoleccion\\frmfinca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FincaLN.cs",
+              "DocumentMoniker": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\LogicaNegocio\\FincaLN\\FincaLN.cs",
+              "RelativeDocumentMoniker": "LogicaNegocio\\FincaLN\\FincaLN.cs",
+              "ToolTip": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\LogicaNegocio\\FincaLN\\FincaLN.cs",
+              "RelativeToolTip": "LogicaNegocio\\FincaLN\\FincaLN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T22:24:54.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmFinca.cs",
+              "DocumentMoniker": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFinca.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Recoleccion\\FrmFinca.cs",
+              "ToolTip": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFinca.cs",
+              "RelativeToolTip": "Presentacion\\Recoleccion\\FrmFinca.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAAYwCAAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T21:27:38.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmFinca.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFinca.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Recoleccion\\FrmFinca.cs",
+              "ToolTip": "C:\\Users\\aj199\\OneDrive\\Escritorio\\Final Proyecto\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFinca.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\Recoleccion\\FrmFinca.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-11T21:27:34.86Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

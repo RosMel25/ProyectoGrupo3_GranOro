@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FincaLN\ClsEmpleadoLG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FincaLN\FincaLN.cs" />
     <Compile Include="UsuarioLN\UsusarioLN.cs" />
