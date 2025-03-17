@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empleados\FrmEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\FrmEmpleados.Designer.cs">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prueba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,12 +67,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Puestos\FrmPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Puestos\FrmPuestos.Designer.cs">
+      <DependentUpon>FrmPuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Recoleccion\FrmFinca.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Recoleccion\FrmFinca.Designer.cs">
       <DependentUpon>FrmFinca.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Empleados\FrmEmpleados.resx">
+      <DependentUpon>FrmEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="Prueba.resx">
       <DependentUpon>Prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Puestos\FrmPuestos.resx">
+      <DependentUpon>FrmPuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recoleccion\FrmFinca.resx">
       <DependentUpon>FrmFinca.cs</DependentUpon>

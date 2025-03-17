@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Presentacion.Recoleccion;
 
+
 namespace Presentacion
 {
     internal static class Program
@@ -17,7 +18,7 @@ namespace Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmFinca());
+            Application.Run(new FrmMenu());
         }
     }
 }

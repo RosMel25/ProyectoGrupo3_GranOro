@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace AccesoDatos.DataBase
 {
@@ -82,7 +82,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     string procedure = procedureName;
                     string[] param = paramNames;
@@ -114,7 +114,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     string procedure = procedureName;
                     string param = TipoProcedimiento;

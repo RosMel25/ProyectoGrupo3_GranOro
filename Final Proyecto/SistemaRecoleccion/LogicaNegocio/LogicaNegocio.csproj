@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmpleadoLN\EmpleadoLN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FincaLN\FincaLN.cs" />
+    <Compile Include="PuestoLN\PuestoLN.cs" />
     <Compile Include="UsuarioLN\UsusarioLN.cs" />
   </ItemGroup>
   <ItemGroup>

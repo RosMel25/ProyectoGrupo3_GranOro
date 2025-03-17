@@ -24,3 +24,16 @@ C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\LogicaNegoc
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.pdb
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.dll
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.pdb
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\LogicaNegocio\bin\Debug\Oracle.ManagedDataAccess.dll
