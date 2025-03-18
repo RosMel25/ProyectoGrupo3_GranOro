@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Finca\ClsFinca.cs" />
+    <Compile Include="ClsEmpleado.cs" />
+    <Compile Include="ClsFinca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usuarios\ClsUsuario.cs" />
+    <Compile Include="ClsUsuario.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

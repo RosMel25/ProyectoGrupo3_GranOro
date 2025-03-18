@@ -10,9 +10,3 @@ C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Entidad\obj
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.dll
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.pdb
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\bin\Debug\Entidad.dll
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\bin\Debug\Entidad.pdb
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.csproj.AssemblyReference.cache
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.dll
-C:\Users\roble\Source\Repos\ProyectoGrupo3_GranOro\Final Proyecto\SistemaRecoleccion\Entidad\obj\Debug\Entidad.pdb

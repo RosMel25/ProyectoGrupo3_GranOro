@@ -10,15 +10,29 @@ namespace LogicaNegocio.PuestoLN
 {
     public class PuestoLN
     {
-        private ClsPuestoDB puestoDB = new ClsPuestoDB(); // Instancia de la capa de datos
+        public AccesoDatos.DataBase.ClsDataBase data;
+
+        public PuestoLN()
+        {
+            this.data = new AccesoDatos.DataBase.ClsDataBase();
+        }
 
         public DataTable ObtenerPuestos()
         {
-            return puestoDB.ListarPuestos();
+            string Procedimiento = "PROCE_EMPLEADO.ListarPuestos";
+            string TipoProcedimiento = "p_cursor";
+
+            return data.ejecutarProcedimientoMOSTRAR(
+                Procedimiento,
+                TipoProcedimiento
+                );
         }
 
-        public void AgregarPuesto(int id, string nombre, decimal minSalario, decimal maxSalario)
+        public DataTable AgregarPuesto(int id, string nombre, decimal minSalario, decimal maxSalario)
         {
+
+            string Procedimiento = "PROCE_EMPLEADO.InsertarPuesto";
+
             if (string.IsNullOrWhiteSpace(nombre))
                 throw new ArgumentException("El nombre del puesto no puede estar vacío.");
 
@@ -28,10 +42,20 @@ namespace LogicaNegocio.PuestoLN
             if (minSalario > maxSalario)
                 throw new ArgumentException("El salario mínimo no puede ser mayor que el máximo.");
 
-            puestoDB.InsertarPuesto(id, nombre, minSalario, maxSalario);
+            return data.ejecutarProcedimientoCRUD(
+            Procedimiento,
+            new string[] { "p_Id_Puesto", "p_Nombre_Puesto", "p_Min_Salario", "p_Max_Salario" },
+            new string[] { Newfinca.No_Finca.ToString(),
+                    Newfinca.Nom_Finca.ToString(), Newfinca.Tam_Finca.ToString(),
+                    Newfinca.Ubi_Finca.ToString(), }
+
+             );
         }
-        public void ActualizarPuesto(int id, string nombre, decimal minSalario, decimal maxSalario)
+        public DataTable ActualizarPuesto(int id, string nombre, decimal minSalario, decimal maxSalario)
         {
+
+            string Procedimiento = "PROCE_EMPLEADO.ActualizarPuesto";
+
             if (string.IsNullOrWhiteSpace(nombre))
                 throw new ArgumentException("El nombre del puesto no puede estar vacío.");
 
@@ -41,15 +65,29 @@ namespace LogicaNegocio.PuestoLN
             if (minSalario > maxSalario)
                 throw new ArgumentException("El salario mínimo no puede ser mayor que el máximo.");
 
-            puestoDB.ActualizarPuesto(id, nombre, minSalario, maxSalario);
+            return data.ejecutarProcedimientoCRUD(
+            Procedimiento,
+            new string[] { "p_Id_Puesto", "p_Nombre_Puesto", "p_Min_Salario", "p_Max_Salario" },
+            new string[] { Newfinca.No_Finca.ToString(),
+                    Newfinca.Nom_Finca.ToString(), Newfinca.Tam_Finca.ToString(),
+                    Newfinca.Ubi_Finca.ToString(), }
+
+             );
         }
 
-        public void EliminarPuesto(int id)
+        public DataTable EliminarPuesto(int id)
         {
+            string Procedimiento = "PROCE_EMPLEADO.ActualizarPuesto";
+
             if (id <= 0)
                 throw new ArgumentException("El ID del puesto debe ser mayor a 0.");
 
-            puestoDB.EliminarPuesto(id);
+            return data.ejecutarProcedimientoCRUD(
+                Procedimiento,
+                new string[] { "p_Id_Puesto" },
+                new string[] { Newfinca.No_Finca.ToString() }
+
+            );
         }
 
         public DataTable BuscarPuesto(int id)

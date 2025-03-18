@@ -1,6 +1,6 @@
 ﻿namespace Presentacion.Recoleccion
 {
-    partial class FrmFinca
+    partial class FrmCortes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFinca));
-            this.PanelApp = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCortes));
+            this.PanelFinca = new System.Windows.Forms.Panel();
             this.Btn_refrescar = new System.Windows.Forms.Button();
             this.Btn_buscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -56,39 +55,39 @@
             this.BtnFinca = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.PanelApp.SuspendLayout();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PanelFinca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).BeginInit();
             this.PanelMenu.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // PanelApp
+            // PanelFinca
             // 
-            this.PanelApp.AutoSize = true;
-            this.PanelApp.Controls.Add(this.Btn_refrescar);
-            this.PanelApp.Controls.Add(this.Btn_buscar);
-            this.PanelApp.Controls.Add(this.txtBuscar);
-            this.PanelApp.Controls.Add(this.label6);
-            this.PanelApp.Controls.Add(this.label5);
-            this.PanelApp.Controls.Add(this.txtNombre);
-            this.PanelApp.Controls.Add(this.btnEliminar);
-            this.PanelApp.Controls.Add(this.btnEditar);
-            this.PanelApp.Controls.Add(this.btnGuardar);
-            this.PanelApp.Controls.Add(this.txtUbicacion);
-            this.PanelApp.Controls.Add(this.label4);
-            this.PanelApp.Controls.Add(this.txtTamaño);
-            this.PanelApp.Controls.Add(this.label3);
-            this.PanelApp.Controls.Add(this.label2);
-            this.PanelApp.Controls.Add(this.txtNoFinca);
-            this.PanelApp.Controls.Add(this.label1);
-            this.PanelApp.Controls.Add(this.Mostrar_Valores);
-            this.PanelApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelApp.Location = new System.Drawing.Point(173, 0);
-            this.PanelApp.Name = "PanelApp";
-            this.PanelApp.Size = new System.Drawing.Size(978, 508);
-            this.PanelApp.TabIndex = 5;
-            this.PanelApp.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelApp_Paint);
+            this.PanelFinca.AutoSize = true;
+            this.PanelFinca.Controls.Add(this.label7);
+            this.PanelFinca.Controls.Add(this.Btn_refrescar);
+            this.PanelFinca.Controls.Add(this.Btn_buscar);
+            this.PanelFinca.Controls.Add(this.txtBuscar);
+            this.PanelFinca.Controls.Add(this.label5);
+            this.PanelFinca.Controls.Add(this.txtNombre);
+            this.PanelFinca.Controls.Add(this.btnEliminar);
+            this.PanelFinca.Controls.Add(this.btnEditar);
+            this.PanelFinca.Controls.Add(this.btnGuardar);
+            this.PanelFinca.Controls.Add(this.txtUbicacion);
+            this.PanelFinca.Controls.Add(this.label4);
+            this.PanelFinca.Controls.Add(this.txtTamaño);
+            this.PanelFinca.Controls.Add(this.label3);
+            this.PanelFinca.Controls.Add(this.label2);
+            this.PanelFinca.Controls.Add(this.txtNoFinca);
+            this.PanelFinca.Controls.Add(this.label1);
+            this.PanelFinca.Controls.Add(this.Mostrar_Valores);
+            this.PanelFinca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelFinca.Location = new System.Drawing.Point(173, 0);
+            this.PanelFinca.Name = "PanelFinca";
+            this.PanelFinca.Size = new System.Drawing.Size(981, 511);
+            this.PanelFinca.TabIndex = 7;
             // 
             // Btn_refrescar
             // 
@@ -99,7 +98,6 @@
             this.Btn_refrescar.Size = new System.Drawing.Size(39, 35);
             this.Btn_refrescar.TabIndex = 59;
             this.Btn_refrescar.UseVisualStyleBackColor = true;
-            this.Btn_refrescar.Click += new System.EventHandler(this.button2_Click);
             // 
             // Btn_buscar
             // 
@@ -110,7 +108,6 @@
             this.Btn_buscar.Size = new System.Drawing.Size(39, 35);
             this.Btn_buscar.TabIndex = 58;
             this.Btn_buscar.UseVisualStyleBackColor = true;
-            this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
             // txtBuscar
             // 
@@ -119,18 +116,6 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(276, 35);
             this.txtBuscar.TabIndex = 57;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(48, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "N° Finca: ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -138,9 +123,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(723, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(197, 25);
+            this.label5.Size = new System.Drawing.Size(176, 25);
             this.label5.TabIndex = 55;
-            this.label5.Text = "Datos de la Finca";
+            this.label5.Text = "Datos del Corte";
             // 
             // txtNombre
             // 
@@ -159,7 +144,6 @@
             this.btnEliminar.Size = new System.Drawing.Size(123, 52);
             this.btnEliminar.TabIndex = 53;
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnEditar
             // 
@@ -170,7 +154,6 @@
             this.btnEditar.Size = new System.Drawing.Size(123, 52);
             this.btnEditar.TabIndex = 52;
             this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // btnGuardar
             // 
@@ -181,7 +164,6 @@
             this.btnGuardar.Size = new System.Drawing.Size(123, 52);
             this.btnGuardar.TabIndex = 51;
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // txtUbicacion
             // 
@@ -236,7 +218,6 @@
             this.txtNoFinca.Name = "txtNoFinca";
             this.txtNoFinca.Size = new System.Drawing.Size(216, 50);
             this.txtNoFinca.TabIndex = 45;
-            this.txtNoFinca.TextChanged += new System.EventHandler(this.txtNoFinca_TextChanged_1);
             // 
             // label1
             // 
@@ -259,11 +240,10 @@
             this.Mostrar_Valores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Mostrar_Valores.Size = new System.Drawing.Size(632, 302);
             this.Mostrar_Valores.TabIndex = 43;
-            this.Mostrar_Valores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mostrar_Valores_CellContentClick_1);
             // 
             // PanelMenu
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.PanelMenu.BackColor = System.Drawing.SystemColors.Highlight;
             this.PanelMenu.Controls.Add(this.BtnUser);
             this.PanelMenu.Controls.Add(this.BtnReportes);
             this.PanelMenu.Controls.Add(this.Recoleccion);
@@ -274,8 +254,8 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(173, 508);
-            this.PanelMenu.TabIndex = 4;
+            this.PanelMenu.Size = new System.Drawing.Size(173, 511);
+            this.PanelMenu.TabIndex = 6;
             // 
             // BtnUser
             // 
@@ -286,7 +266,7 @@
             this.BtnUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUser.ForeColor = System.Drawing.Color.White;
             this.BtnUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnUser.Image")));
-            this.BtnUser.Location = new System.Drawing.Point(0, 420);
+            this.BtnUser.Location = new System.Drawing.Point(0, 423);
             this.BtnUser.Name = "BtnUser";
             this.BtnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnUser.Size = new System.Drawing.Size(173, 88);
@@ -351,6 +331,7 @@
             this.BtnCorte.TabIndex = 2;
             this.BtnCorte.Text = "Cortes";
             this.BtnCorte.UseVisualStyleBackColor = true;
+            this.BtnCorte.Click += new System.EventHandler(this.BtnCorte_Click);
             // 
             // BtnFinca
             // 
@@ -365,6 +346,7 @@
             this.BtnFinca.TabIndex = 1;
             this.BtnFinca.Text = "Fincas";
             this.BtnFinca.UseVisualStyleBackColor = true;
+            this.BtnFinca.Click += new System.EventHandler(this.BtnFinca_Click);
             // 
             // PanelLogo
             // 
@@ -385,20 +367,27 @@
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             // 
-            // FrmFinca
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(16, 50);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 20);
+            this.label7.TabIndex = 60;
+            this.label7.Text = "Nombre corte: ";
+            // 
+            // FrmCortes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 508);
-            this.Controls.Add(this.PanelApp);
+            this.ClientSize = new System.Drawing.Size(1154, 511);
+            this.Controls.Add(this.PanelFinca);
             this.Controls.Add(this.PanelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FrmFinca";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FrmFinca";
-            this.Load += new System.EventHandler(this.FrmFinca_Load);
-            this.PanelApp.ResumeLayout(false);
-            this.PanelApp.PerformLayout();
+            this.Name = "FrmCortes";
+            this.Text = "FrmCortes";
+            this.PanelFinca.ResumeLayout(false);
+            this.PanelFinca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).EndInit();
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
@@ -410,16 +399,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel PanelApp;
-        private System.Windows.Forms.Panel PanelMenu;
-        private System.Windows.Forms.Button BtnUser;
-        private System.Windows.Forms.Button BtnReportes;
-        private System.Windows.Forms.Button Recoleccion;
-        private System.Windows.Forms.Button BtnPrecio;
-        private System.Windows.Forms.Button BtnCorte;
-        private System.Windows.Forms.Button BtnFinca;
-        private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Panel PanelFinca;
+        private System.Windows.Forms.Button Btn_refrescar;
+        private System.Windows.Forms.Button Btn_buscar;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnEliminar;
@@ -433,9 +416,15 @@
         private System.Windows.Forms.TextBox txtNoFinca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Mostrar_Valores;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button Btn_refrescar;
-        private System.Windows.Forms.Button Btn_buscar;
+        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Button BtnUser;
+        private System.Windows.Forms.Button BtnReportes;
+        private System.Windows.Forms.Button Recoleccion;
+        private System.Windows.Forms.Button BtnPrecio;
+        private System.Windows.Forms.Button BtnCorte;
+        private System.Windows.Forms.Button BtnFinca;
+        private System.Windows.Forms.Panel PanelLogo;
+        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.Label label7;
     }
 }

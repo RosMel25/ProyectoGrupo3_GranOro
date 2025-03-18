@@ -301,9 +301,19 @@ namespace Presentacion.Recoleccion
 
         }
 
+
         #endregion
 
+        private void BtnCorte_Click(object sender, EventArgs e)
+        {
+            FrmCortes formulario2 = new FrmCortes();
 
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
     }
 
 

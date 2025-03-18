@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesoDatos.DataBase;
 using Entidad.Usuarios;
-using LogicaNegocio.Usuarios;
 
 
 
@@ -23,15 +22,9 @@ namespace LogicaNegocio.FincaLN
         }
 
 
-
         #region Metodos de Acceso
 
         // Mostrar Usuarios
-        private ClsFincaDB fincaDB = new ClsFincaDB();
-        public DataTable MostrarUsuarios()
-        {
-            return fincaDB.ListarUsuarios();
-        }
         public DataTable MostrarFinca()
         {
             string Procedimiento = "PROCE_FINCAS.LISTAR";

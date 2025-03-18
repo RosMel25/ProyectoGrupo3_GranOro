@@ -51,6 +51,47 @@ namespace LogicaNegocio.Usuarios
                 );
         }
 
+        public DataTable EditarFinca(Entidad.Finca.ClsFinca Newfinca)
+        {
+            string Procedimiento = "PROCE_FINCAS.EDITAR";
+
+            return data.ejecutarProcedimientoCRUD(
+                Procedimiento,
+                new string[] { "pID", "pNOMBRE", "pTAMAÑO", "pUBICACION" },
+                new string[] { Newfinca.No_Finca.ToString(),
+                    Newfinca.Nom_Finca.ToString(), Newfinca.Tam_Finca.ToString(),
+                    Newfinca.Ubi_Finca.ToString(), }
+
+                );
+        }
+
+        public DataTable EliminarFinca(Entidad.Finca.ClsFinca Newfinca)
+        {
+            string Procedimiento = "PROCE_FINCAS.ELIMINAR";
+
+            return data.ejecutarProcedimientoCRUD(
+                Procedimiento,
+                new string[] { "pID", "pNOMBRE", "pTAMAÑO", "pUBICACION" },
+                new string[] { Newfinca.No_Finca.ToString(),
+                    Newfinca.Nom_Finca.ToString(), Newfinca.Tam_Finca.ToString(),
+                    Newfinca.Ubi_Finca.ToString(), }
+
+                );
+        }
+
+        public DataTable BuscarFinca(Entidad.Finca.ClsFinca Newfinca)
+        {
+            string Procedimiento = "PROCE_FINCAS.BUSCAR";
+
+            return data.ejecutarProcedimientoCRUD(
+                Procedimiento,
+                new string[] { "pID", "pNOMBRE", "pTAMAÑO", "pUBICACION" },
+                new string[] { Newfinca.No_Finca.ToString(),
+                    Newfinca.Nom_Finca.ToString(), Newfinca.Tam_Finca.ToString(),
+                    Newfinca.Ubi_Finca.ToString(), }
+                );
+        }
+
         #endregion
 
 

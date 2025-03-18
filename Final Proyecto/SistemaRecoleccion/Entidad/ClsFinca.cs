@@ -32,9 +32,7 @@ namespace Entidad.Finca
         public string Nom_Finca { get => _Nom_Finca; set => _Nom_Finca = value; }
         public string Tam_Finca { get => _Tam_Finca; set => _Tam_Finca = value; }
         public string Ubi_Finca { get => _Ubi_Finca; set => _Ubi_Finca = value; }
-        public string MjsError { get => _MjsError; set => _MjsError = value; }
-        public string ValorScalar { get => _ValorScalar; set => _ValorScalar = value; }
-        public DataTable DtResulatados { get => _dtResulatados; set => _dtResulatados = value; }
+
 
         #endregion
 
