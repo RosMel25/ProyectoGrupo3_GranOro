@@ -22,15 +22,7 @@ CREATE TABLE Precio (
     Valor_Cafe_Verde_Cajuelas DECIMAL(10, 2)
 );
 
--- 4. Tabla Categoría
-CREATE TABLE Categoria (
-    Id_Categoria INT PRIMARY KEY,
-    Tipo_Categoria VARCHAR(100),
-    Id_Corte INT,
-    Id_Precio INT,
-    FOREIGN KEY (Id_Corte) REFERENCES Cortes(Id_Corte),
-    FOREIGN KEY (Id_Precio) REFERENCES Precio(Id_Precio)
-);
+
 
 CREATE TABLE Puesto (
     Id_Puesto INT PRIMARY KEY,
@@ -63,16 +55,18 @@ CREATE TABLE Recolector (
 CREATE TABLE Recoleccion (
     Id_Recoleccion INT PRIMARY KEY,
     Identificacion_Recolector INT,
+    NO_FINCA INT,
     Id_Corte INT,
     Fecha_Recoleccion DATE,
     Cantidad_Cajuelas INT,
     Cantidad_Cuartillos INT,
-    Id_Categoria INT,
+    Id_Precio INT,
     Pago_Total DECIMAL(10, 2),
     FOREIGN KEY (Identificacion_Recolector) REFERENCES Recolector(Identificacion_Recolector),
+    FOREIGN KEY (NO_FINCA) REFERENCES FINCA(NO_FINCA),
     FOREIGN KEY (Id_Corte) REFERENCES Cortes(Id_Corte),
-    FOREIGN KEY (Id_Categoria) REFERENCES Categoria(Id_Categoria)
-);
+    FOREIGN KEY (Id_Precio) REFERENCES Precio(Id_Precio)
+    )
 
 -- 8. Tabla Proveedores
 CREATE TABLE Proveedores (
