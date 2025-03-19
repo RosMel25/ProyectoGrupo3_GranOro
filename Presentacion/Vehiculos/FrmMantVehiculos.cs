@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Presentacion.Vehiculos
+{
+    public partial class FrmMantVehiculos : Form
+    {
+        public FrmMantVehiculos()
+        {
+            InitializeComponent();
+        }
+
+        private void FrmMantVehiculos_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
