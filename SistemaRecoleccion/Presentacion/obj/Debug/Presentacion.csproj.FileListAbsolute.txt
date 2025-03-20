@@ -1,0 +1,104 @@
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\aj199\source\repos\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.dll
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.dll
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Oracle.DataAccess.dll
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.pdb
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll.config
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Prueba.resources
+C:\Users\aj199\OneDrive\Escritorio\SistemaRecoleccion\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Prueba.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Oracle.DataAccess.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll.config
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmFinca.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmCortes.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Empleados.FrmEmpleados.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.FrmMenu.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Puestos.FrmPuestos.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmFincas.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmPrecios.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmRecolector.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Oracle.DataAccess.dll
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.pdb
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll.config
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmCorte.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.FrmUsuarios.resources
+C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.Frm_Cortes.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.dll
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.dll
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Oracle.DataAccess.dll
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\Entidad.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\LogicaNegocio.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\bin\Debug\AccesoDatos.dll.config
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Empleados.FrmEmpleados.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmCorte.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.FrmMenu.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.FrmUsuarios.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Puestos.FrmPuestos.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmFincas.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmPrecios.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.FrmRecolector.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Recoleccion.Frm_Cortes.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.Vehiculos.FrmMantVehiculos.resources
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\aj199\Music\SistemaRecoleccion\Presentacion\obj\Debug\Presentacion.pdb

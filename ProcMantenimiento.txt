@@ -1,0 +1,27 @@
+CREATE OR REPLACE PACKAGE PROCE_MANT_VEHICULOS AS 
+    -- Procedimiento para agregar un mantenimiento
+    PROCEDURE AGREGAR_MANTENIMIENTO(
+        pIdMantenimiento IN INT, 
+        pPlaca IN VARCHAR2, 
+        pMotivo IN VARCHAR2, 
+        pCosto IN DECIMAL
+    );
+
+    -- Procedimiento para editar un mantenimiento
+    PROCEDURE EDITAR_MANTENIMIENTO(
+        pIdMantenimiento IN INT, 
+        pPlaca IN VARCHAR2, 
+        pMotivo IN VARCHAR2, 
+        pCosto IN DECIMAL
+    );
+
+    -- Procedimiento para eliminar un mantenimiento
+    PROCEDURE ELIMINAR_MANTENIMIENTO(pIdMantenimiento IN INT);
+
+    -- Procedimiento para buscar un mantenimiento por ID
+    PROCEDURE BUSCAR_MANTENIMIENTO(pIdMantenimiento IN INT, CUR_MANTENIMIENTO OUT SYS_REFCURSOR);
+
+    -- Procedimiento para listar todos los mantenimientos
+    PROCEDURE LISTAR_MANTENIMIENTOS(CUR_MANTENIMIENTOS OUT SYS_REFCURSOR);
+
+END PROCE_MANT_VEHICULOS;

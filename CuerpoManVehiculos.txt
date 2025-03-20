@@ -1,0 +1,53 @@
+CREATE OR REPLACE PACKAGE BODY PROCE_MANT_VEHICULOS AS 
+
+    -- Agregar un mantenimiento
+    PROCEDURE AGREGAR_MANTENIMIENTO(
+        pIdMantenimiento IN INT, 
+        pPlaca IN VARCHAR2, 
+        pMotivo IN VARCHAR2, 
+        pCosto IN DECIMAL
+    ) AS 
+    BEGIN
+        INSERT INTO Mant_Vehiculos (Id_Mantenimiento, Placa_Vehiculo, Motivo_Mantenimiento, Costo_Mantenimiento)
+        VALUES (pIdMantenimiento, pPlaca, pMotivo, pCosto);
+        COMMIT;
+    END AGREGAR_MANTENIMIENTO;
+
+    -- Editar un mantenimiento
+    PROCEDURE EDITAR_MANTENIMIENTO(
+        pIdMantenimiento IN INT, 
+        pPlaca IN VARCHAR2, 
+        pMotivo IN VARCHAR2, 
+        pCosto IN DECIMAL
+    ) AS
+    BEGIN
+        UPDATE Mant_Vehiculos
+        SET Placa_Vehiculo = pPlaca, 
+            Motivo_Mantenimiento = pMotivo, 
+            Costo_Mantenimiento = pCosto
+        WHERE Id_Mantenimiento = pIdMantenimiento;
+        COMMIT;
+    END EDITAR_MANTENIMIENTO;
+
+    -- Eliminar un mantenimiento
+    PROCEDURE ELIMINAR_MANTENIMIENTO(pIdMantenimiento IN INT) AS
+    BEGIN
+        DELETE FROM Mant_Vehiculos WHERE Id_Mantenimiento = pIdMantenimiento;
+        COMMIT;
+    END ELIMINAR_MANTENIMIENTO;
+
+    -- Buscar un mantenimiento por Id
+    PROCEDURE BUSCAR_MANTENIMIENTO(pIdMantenimiento IN INT, CUR_MANTENIMIENTO OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN CUR_MANTENIMIENTO FOR
+        SELECT * FROM Mant_Vehiculos WHERE Id_Mantenimiento = pIdMantenimiento;
+    END BUSCAR_MANTENIMIENTO;
+
+    -- Listar todos los mantenimientos
+    PROCEDURE LISTAR_MANTENIMIENTOS(CUR_MANTENIMIENTOS OUT SYS_REFCURSOR) AS
+    BEGIN
+        OPEN CUR_MANTENIMIENTOS FOR
+        SELECT * FROM Mant_Vehiculos;
+    END LISTAR_MANTENIMIENTOS;
+
+END PROCE_MANT_VEHICULOS;
