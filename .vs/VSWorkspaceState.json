@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SistemaRecoleccion",
+    "\\SistemaRecoleccion\\AccesoDatos",
+    "\\SistemaRecoleccion\\AccesoDatos\\DataBase",
+    "\\SistemaRecoleccion\\Entidad\\ProveedorLN",
+    "\\SistemaRecoleccion\\Entidad\\Recoleccion",
+    "\\SistemaRecoleccion\\LogicaNegocio\\EmpleadoLN",
+    "\\SistemaRecoleccion\\LogicaNegocio\\RecoleccionLN",
+    "\\SistemaRecoleccion\\Presentacion",
+    "\\SistemaRecoleccion\\Presentacion\\Recoleccion"
   ],
-  "SelectedNode": "\\SistemaRecoleccion.sln",
+  "SelectedNode": "\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFincas.cs",
   "PreviewInSolutionExplorer": false
 }
