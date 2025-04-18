@@ -72,7 +72,7 @@ namespace Presentacion.Empleados
                         MessageBox.Show("Empleado Registrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
-                    }
+            Mostrar_Valores.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
 
                     Mostrar_Valores.DataSource = CargarEmpleados();
                 }
@@ -105,11 +105,7 @@ namespace Presentacion.Empleados
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar los datos: " + ex, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                }
-            }
-        }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
