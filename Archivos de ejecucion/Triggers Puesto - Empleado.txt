@@ -1,0 +1,80 @@
+CREATE OR REPLACE TRIGGER TRG_VALIDAR_SALARIO
+BEFORE INSERT OR UPDATE ON EMPLEADOS
+FOR EACH ROW
+DECLARE
+    v_min_salario PUESTO.MIN_SALARIO%TYPE;
+BEGIN
+    -- Obtener el salario mínimo del puesto asignado
+    SELECT MIN_SALARIO INTO v_min_salario
+    FROM PUESTO
+    WHERE ID_PUESTO = :NEW.ID_PUESTO;
+    -- Validar que el salario del nuevo registro cumpla con el mínimo
+    IF :NEW.SALARIO < v_min_salario THEN
+        RAISE_APPLICATION_ERROR(-20010, 'El salario no puede ser menor al mínimo permitido para el puesto.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER TRG_VERIFICAR_PUESTO_AL_ELIMINAR
+BEFORE DELETE ON EMPLEADOS
+FOR EACH ROW
+DECLARE
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_count
+    FROM PUESTO
+    WHERE ID_PUESTO = :OLD.ID_PUESTO;
+
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20020, 'El puesto asociado al empleado no existe. No se puede eliminar el registro.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_no_eliminar_puesto_con_empleados
+BEFORE DELETE ON PUESTO
+FOR EACH ROW
+DECLARE
+    v_contador NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_contador
+    FROM EMPLEADOS
+    WHERE ID_PUESTO = :OLD.ID_PUESTO;
+
+    IF v_contador > 0 THEN
+        RAISE_APPLICATION_ERROR(-20004, 'No se puede eliminar un puesto con empleados asociados.');
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_prevenir_rebajo_puesto
+BEFORE UPDATE ON EMPLEADOS
+FOR EACH ROW
+DECLARE
+    v_nuevo_max NUMBER;
+BEGIN
+    IF :NEW.ID_PUESTO != :OLD.ID_PUESTO THEN
+        SELECT MAX_SALARIO INTO v_nuevo_max
+        FROM PUESTO
+        WHERE ID_PUESTO = :NEW.ID_PUESTO;
+
+        IF v_nuevo_max < :OLD.SALARIO THEN
+            RAISE_APPLICATION_ERROR(-20005, 'El nuevo puesto tiene un salario máximo menor al salario actual del empleado.');
+        END IF;
+    END IF;
+END;
+
+CREATE OR REPLACE TRIGGER trg_unico_email_empleado
+BEFORE INSERT OR UPDATE OF email
+ON empleados
+FOR EACH ROW
+DECLARE
+    v_count NUMBER;
+BEGIN
+    SELECT COUNT(*)
+    INTO v_count
+    FROM empleados
+    WHERE UPPER(email) = UPPER(:NEW.email)
+    AND identificacion_empleado != :NEW.identificacion_empleado;
+
+    IF v_count > 0 THEN
+        RAISE_APPLICATION_ERROR(-20030, 'El correo ya está en uso por otro empleado.');
+    END IF;
+END;
