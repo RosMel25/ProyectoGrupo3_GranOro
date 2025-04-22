@@ -15,7 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentacion.Empleados
 {
-    public partial class FrmEmpleados: Form
+    public partial class FrmEmpleados : Form
     {
         DataTable dtResultados = new DataTable();
         public LogicaNegocio.EmpleadoLN.EmpleadoLN EmpleadoInfo;
@@ -56,8 +56,8 @@ namespace Presentacion.Empleados
             string idPuesto = txtIdPuesto.Text;
             string idFinca = txtIdFinca.Text;
 
-            //Guardar Nuevo Registro
-            if (Editar == false)
+
+        }
             {
                 try
                 {
