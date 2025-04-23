@@ -125,9 +125,98 @@ namespace AccesoDatos.DataBase
 
         }
 
+        // Nueva sobrecarga: procedimientos con parámetros IN y SYS_REFCURSOR
+        public DataTable ejecutarProcedimientoMOSTRAR(string procedureName, string[] paramNames, object[] paramValues, string outputCursorName)
+        {
+            DsResultados1.Tables.Clear();
+            using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
+            {
+                ObjOracleConnection.Open();
+                try
+                {
+                    ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection);
+                    ObjOracleCommand.CommandType = CommandType.StoredProcedure;
 
-        #endregion
+                    // Agregar parámetros de entrada
+                    for (int i = 0; i < paramNames.Length; i++)
+                    {
+                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
+                    }
 
+                    // Agregar parámetro de salida tipo cursor
+                    ObjOracleCommand.Parameters.Add(outputCursorName, OracleDbType.RefCursor, ParameterDirection.Output);
 
+                    // Ejecutar
+                    ObjOracleDataAdapter = new OracleDataAdapter();
+                    ObjOracleDataAdapter.SelectCommand = ObjOracleCommand;
+                    ObjOracleDataAdapter.Fill(DsResultados1);
+
+                    return DsResultados1.Tables[0];
+                }
+                catch (Exception e)
+                {                    
+                    return null;
+                }
+            }
+        }
+
+        public int ejecutarProcedimientoScalar(string procedureName, string[] paramNames, object[] paramValues, string outputParamName)
+        {
+            using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
+            {
+                ObjOracleConnection.Open();
+                try
+                {
+                    ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection);
+                    ObjOracleCommand.CommandType = CommandType.StoredProcedure;
+
+                    // Param IN
+                    for (int i = 0; i < paramNames.Length; i++)
+                    {
+                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
+                    }
+
+                    // Param OUT
+                    OracleParameter outputParam = new OracleParameter(outputParamName, OracleDbType.Int32);
+                    outputParam.Direction = ParameterDirection.Output;
+                    ObjOracleCommand.Parameters.Add(outputParam);
+
+                    ObjOracleCommand.ExecuteNonQuery();
+
+                    return Convert.ToInt32(outputParam.Value);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al ejecutar procedimiento scalar: " + ex.Message);
+                    return -1;
+                }
+            }
+        }
+        public string ejecutarFuncionScalar(string functionName, string[] paramNames, object[] paramValues)
+        {
+            using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
+            {
+                ObjOracleConnection.Open();
+                try
+                {
+                    string sql = $"SELECT {functionName}(:{string.Join(", :", paramNames)}) FROM DUAL";
+                    ObjOracleCommand = new OracleCommand(sql, ObjOracleConnection);
+                    ObjOracleCommand.CommandType = CommandType.Text;
+                    for (int i = 0; i < paramNames.Length; i++)
+                    {
+                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
+                    }
+                    object result = ObjOracleCommand.ExecuteScalar();
+                    return result?.ToString() ?? "NO ENCONTRADO";
+                }
+                catch (Exception ex)
+                {
+                    return "ERROR: " + ex.Message;
+                }
+            }
+        }
     }
+    #endregion
+
+
 }

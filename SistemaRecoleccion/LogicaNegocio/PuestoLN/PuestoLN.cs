@@ -85,6 +85,59 @@ namespace LogicaNegocio.PuestoLN
              );
 
         }
+
+        public DataTable AumentarSalarioMaximo(decimal porcentaje)
+        {
+            string procedimiento = "PROCE_PUESTO.AUMENTAR_SALARIOS_MAXIMOS";
+
+            return data.ejecutarProcedimientoCRUD(
+                procedimiento,
+                new string[] { "pPORCENTAJE" },
+                new string[] { porcentaje.ToString() }
+            );
+        }
+
+        public DataTable UnificarSalarioMinimo(decimal salario)
+        {
+            string procedimiento = "PROCE_PUESTO.UNIFICAR_SALARIOS_MINIMOS";
+
+            return data.ejecutarProcedimientoCRUD(
+                procedimiento,
+                new string[] { "pSALARIO" },
+                new string[] { salario.ToString() }
+            );
+        }
+
+        public DataTable MostrarPuestosConMuchosEmpleados(int cantidadMinima)
+        {
+            string procedimiento = "PROCE_PUESTO.MOSTRAR_PUESTOS_CON_MUCHOS_EMPLEADOS";
+
+            return data.ejecutarProcedimientoMOSTRAR(
+                procedimiento,
+                new string[] { "pMIN_CANTIDAD" },
+                new object[] { cantidadMinima },
+                "cur_PUESTOS"
+            );
+        }
+
+        public DataTable ObtenerPuestosCantidad()
+        {
+            string procedimiento = "PROCE_PUESTO.MOSTRAR_PUESTOS_CANTIDAD";
+
+            return data.ejecutarProcedimientoMOSTRAR(
+                procedimiento,
+                new string[] { },         // No parámetros IN
+                new object[] { },
+                "cur_puestos"            // Nombre del parámetro OUT
+            );
+        }
+
+
+
+
+
+
+
         #endregion
     }
 }

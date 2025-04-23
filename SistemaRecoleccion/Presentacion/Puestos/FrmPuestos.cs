@@ -7,10 +7,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LogicaNegocio;
-using LogicaNegocio.PuestoLN;
-using Entidad;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentacion.Puestos
 {
@@ -40,7 +36,7 @@ namespace Presentacion.Puestos
             return PuestoInfo.ObtenerPuestos();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_click(object sender, EventArgs e)
         {
             string id = txtId.Text;
             string nombre = txtNombre.Text;
@@ -70,7 +66,7 @@ namespace Presentacion.Puestos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                    MessageBox.Show("No se pudo insertar los datos por: " + ex);
                 }
             }
 
@@ -103,63 +99,141 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar_click(object sender, EventArgs e)
         {
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txtId.Text = Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString();
-                txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["Nom_Puesto"].Value.ToString();
-                txtMinSalario.Text = Mostrar_Valores.CurrentRow.Cells["MINSal_Puesto"].Value.ToString();
-                txtMaxSalario.Text = Mostrar_Valores.CurrentRow.Cells["AXSal_Puesto"].Value.ToString();
-
+            txtId.Text = Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString();
+            txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["Nom_Puesto"].Value.ToString();
+            txtMinSalario.Text = Mostrar_Valores.CurrentRow.Cells["MINSal_Puesto"].Value.ToString();
+            txtMaxSalario.Text = Mostrar_Valores.CurrentRow.Cells["MAXSal_Puesto"].Value.ToString();
+           
             }
             else
                 MessageBox.Show("Debe seleccionar el registro a editar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+        }        
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            string Datofila;
-            int Id;
+        private void btnEliminar_click(object sender, EventArgs e)
+        {         
+
 
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
 
-                Datofila = Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString();
-                Id = int.Parse(Datofila);
-                PuestoInfo.EliminarPuesto(new Entidad.ClsPuesto { Id_Puesto = Id });
-                MessageBox.Show("Registro Eliminado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarPuesto();
-            }
-            else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void Btn_buscar_Click(object sender, EventArgs e)
-        {
-            string DatoBuscar = txtBuscar.Text;
-            int Id;
+                int id = int.Parse(Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString());
 
-            if (DatoBuscar.Equals(""))
-            {
-                Id = int.Parse(DatoBuscar);
-                dtInformacion = PuestoInfo.BuscarPuesto(new Entidad.ClsPuesto { Id_Puesto = Id });
-
-                if (dtInformacion.Rows.Count == 0)
+                try
                 {
-                    MessageBox.Show("El numero de finca no corresponde a ninguna de las dincas registradas", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarPuesto();
+                    PuestoInfo.EliminarPuesto(new Entidad.ClsPuesto { Id_Puesto = id });
+                    MessageBox.Show("Registro eliminado con éxito", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar_Valores.DataSource = CargarPuesto();
                 }
-                else
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
+                }
+            }
+        }
+
+
+        private void btnBuscar_click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtBuscar.Text, out int id))
+            {
+                dtInformacion = PuestoInfo.BuscarPuesto(new Entidad.ClsPuesto { Id_Puesto = id });
+
+                if (dtInformacion.Rows.Count > 0)
                 {
                     Mostrar_Valores.DataSource = dtInformacion;
                 }
+                else
+                {
+                    MessageBox.Show("No se encontró el puesto con ese ID");
+                    Mostrar_Valores.DataSource = CargarPuesto();
+                }
             }
             else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-         }
+            {
+                MessageBox.Show("Ingrese un número válido");
+            }
+        }
+
+        private void btnAumentarSalario_click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtPorcentajeAumento.Text, out decimal porcentaje))
+            {
+                PuestoInfo.AumentarSalarioMaximo(porcentaje);
+                MessageBox.Show("Salarios máximos actualizados");
+                Mostrar_Valores.DataSource = CargarPuesto();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un porcentaje válido");
+            }
+        }
+
+        private void btnUnificarSalarioMinimo_click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtSalarioUnificado.Text, out decimal salario))
+            {
+                PuestoInfo.UnificarSalarioMinimo(salario);
+                MessageBox.Show("Salarios mínimos actualizados");
+                Mostrar_Valores.DataSource = CargarPuesto();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un valor válido para el salario mínimo");
+            }
+        }
+
+        private void btnVerPuestosConMuchosEmpleados(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtMinEmpleados.Text, out int cantidad))
+            {
+                Mostrar_Valores.DataSource = PuestoInfo.MostrarPuestosConMuchosEmpleados(cantidad);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un número válido para cantidad mínima de empleados");
+            }
+        }
+
+        private void btnVerCantidadEmpleados_click(object sender, EventArgs e)
+        {
+            DataTable resultado = PuestoInfo.ObtenerPuestosCantidad();
+
+            if (resultado.Rows.Count > 0)
+            {
+                Mostrar_Valores.DataSource = resultado;
+            }
+            else
+            {
+                MessageBox.Show("No hay datos disponibles");
+            }
+        }
 
         #region Validaciones y Diseños
+
+        public void DiseñoGriew()
+        {
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Coral;
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold);
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //Cambiar el fondo y el color de las celdas (Filas de datos)
+            Mostrar_Valores.DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+            Mostrar_Valores.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            Mostrar_Valores.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8);
+
+            // Cambiar el color de las filas alternas
+            Mostrar_Valores.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+
+            // Establecer bordes
+            Mostrar_Valores.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            Mostrar_Valores.BorderStyle = BorderStyle.Fixed3D;
+        }
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
@@ -189,5 +263,20 @@ namespace Presentacion.Puestos
         }
 
         #endregion
+
+        private void FrmPuestos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

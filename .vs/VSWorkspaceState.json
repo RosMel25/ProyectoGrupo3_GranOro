@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SistemaRecoleccion",
+    "\\SistemaRecoleccion\\Presentacion",
+    "\\SistemaRecoleccion\\Presentacion\\Recoleccion"
   ],
-  "SelectedNode": "\\SistemaRecoleccion.sln",
+  "SelectedNode": "\\SistemaRecoleccion\\Presentacion\\Recoleccion\\FrmFincas.cs",
   "PreviewInSolutionExplorer": false
 }

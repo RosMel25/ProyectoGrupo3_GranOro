@@ -7,27 +7,23 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LogicaNegocio;
-using Entidad;
-using LogicaNegocio.EmpleadoLN;
-using System.Drawing.Text;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Presentacion.Empleados
 {
     public partial class FrmEmpleados : Form
     {
-        DataTable dtResultados = new DataTable();
-        public LogicaNegocio.EmpleadoLN.EmpleadoLN EmpleadoInfo;
-        private bool Editar = false;     
+    DataTable dtResultado = new DataTable();
+    public LogicaNegocio.EmpleadoLN.EmpleadoLN EmpleadoInfo;
+    private bool Editar = false;
 
         public FrmEmpleados()
         {
             InitializeComponent();
             this.EmpleadoInfo = new LogicaNegocio.EmpleadoLN.EmpleadoLN();
-            dtResultados.Columns.Add("Mensaje", typeof(string));
-            Mostrar_Valores.DataSource = CargarEmpleados();
-        }
+            dtResultado.Columns.Add("Mensaje", typeof(string));
+            Mostrar_Valores.DataSource = CargarEmpleado();
+        }       
+
         private void limpiarForm()
         {
             txtId.Clear();
@@ -40,7 +36,7 @@ namespace Presentacion.Empleados
             txtIdFinca.Clear();
         }
 
-        private DataTable CargarEmpleados()
+        private DataTable CargarEmpleado()
         {
             return EmpleadoInfo.ObtenerEmpleados();
         }
@@ -56,139 +52,247 @@ namespace Presentacion.Empleados
             string idPuesto = txtIdPuesto.Text;
             string idFinca = txtIdFinca.Text;
 
-
-        }
+            // Guardar Nuevo Registro
+            if (Editar == false)
             {
                 try
                 {
-                    if (id.Equals("") || nombre.Equals("") || apellido.Equals("") || email.Equals("") || telefono.Equals("") || salario.Equals("") || idPuesto.Equals("") || idFinca.Equals(""))
+                    if (id.Equals("") || nombre.Equals ("") || apellido.Equals("") || email.Equals("") || telefono.Equals("") || salario.Equals("") || idPuesto.Equals("") || idFinca.Equals(""))
                     {
-                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Todos los campos deben estar completos", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
+
                         int id_ = int.Parse(id);
-                        EmpleadoInfo.AgregarEmpleado(NewEmpleado: new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, No_Finca = idFinca,Id_Puesto_Empleado = idPuesto });
+                        EmpleadoInfo.AgregarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, Id_Puesto_Empleado = idPuesto, No_Finca = idFinca });
                         MessageBox.Show("Empleado Registrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
-            Mostrar_Valores.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+                    }
 
-                    Mostrar_Valores.DataSource = CargarEmpleados();
+                    Mostrar_Valores.DataSource = CargarEmpleado();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                    MessageBox.Show("No se pudo insertar los datos por: " + ex);
                 }
             }
-            //EDITAR registro existente
+
+            // Editar Registro Existente
             if (Editar == true)
             {
-
                 try
                 {
                     if (id.Equals("") || nombre.Equals("") || apellido.Equals("") || email.Equals("") || telefono.Equals("") || salario.Equals("") || idPuesto.Equals("") || idFinca.Equals(""))
                     {
-                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Todos los espacios deben estar completos", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         int id_ = int.Parse(id);
-                        EmpleadoInfo.EditarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, No_Finca = idFinca, Id_Puesto_Empleado = idPuesto });
-                        MessageBox.Show("Finca Actualizada", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EmpleadoInfo.AgregarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, Id_Puesto_Empleado = idPuesto, No_Finca = idFinca });
+                        MessageBox.Show("Empleado Actualizado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
-
-                    Mostrar_Valores.DataSource = CargarEmpleados();
+                    Mostrar_Valores.DataSource = CargarEmpleado();
                     Editar = false;
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show("Error al guardar los datos: " + ex, "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                }
+            }
+        }                   
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnEditar(object sender, EventArgs e)
         {
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
                 Editar = true;
-                txtId.Text = Mostrar_Valores.CurrentRow.Cells["Id_Empleado"].Value.ToString();
-                txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["Nom_Empleado"].Value.ToString();
-                txtApellido.Text = Mostrar_Valores.CurrentRow.Cells["Ape_Empleado"].Value.ToString();
-                txtEmail.Text = Mostrar_Valores.CurrentRow.Cells["mail_Empleado"].Value.ToString();
-                txtTelefono.Text = Mostrar_Valores.CurrentRow.Cells["Tel_Empleado"].Value.ToString();
-                txtSalario.Text = Mostrar_Valores.CurrentRow.Cells["Sal_Empleado"].Value.ToString();
-                txtIdPuesto.Text = Mostrar_Valores.CurrentRow.Cells["No_Finca"].Value.ToString();
-                txtIdFinca.Text = Mostrar_Valores.CurrentRow.Cells["Id_Puesto_Empleado"].Value.ToString();
+                txtId.Text = Mostrar_Valores.CurrentRow.Cells["ID_EMPLEADO"].Value.ToString();
+                txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["NOMBRE_EMPLEADO"].Value.ToString();
+                txtApellido.Text = Mostrar_Valores.CurrentRow.Cells["APELLIDO_EMPLEADO"].Value.ToString();
+                txtEmail.Text = Mostrar_Valores.CurrentRow.Cells["EMAIL"].Value.ToString();
+                txtTelefono.Text = Mostrar_Valores.CurrentRow.Cells["TELEFONO"].Value.ToString();
+                txtSalario.Text = Mostrar_Valores.CurrentRow.Cells["SALARIO"].Value.ToString();
+                txtIdPuesto.Text = Mostrar_Valores.CurrentRow.Cells["ID_PUESTO"].Value.ToString();
+                txtIdFinca.Text = Mostrar_Valores.CurrentRow.Cells["NO_FINCA"].Value.ToString();
             }
-
             else
-                MessageBox.Show("Debe seleccionar el registro a editar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            string Datofila;
-            int Id;
-
-            if (Mostrar_Valores.SelectedRows.Count > 0)
             {
-
-                Datofila = Mostrar_Valores.CurrentRow.Cells["Id_Empleado"].Value.ToString();
-                Id = int.Parse(Datofila);
-                EmpleadoInfo.EliminarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = Id });
-                MessageBox.Show("Registro Eliminado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                CargarEmpleados();
+                MessageBox.Show("Debe seleccionar un registro a editar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void BtnEliminar(object sender, EventArgs e)
         {
-            string DatoBuscar = txtBuscar.Text;
-            int Id;
-
-            if (DatoBuscar.Equals(""))
+            if (Mostrar_Valores.SelectedRows.Count > 0)
             {
-                Id = int.Parse(DatoBuscar);
-                dtResultados = EmpleadoInfo.BuscarEmpleado(new Entidad.ClsEmpleado{ Id_Empleado = Id });
+                int id = int.Parse(Mostrar_Valores.CurrentRow.Cells["ID_EMPLEADO"].Value.ToString());
 
-                if (dtResultados.Rows.Count == 0)
+                try
                 {
-                    MessageBox.Show("El numero de finca no corresponde a ninguna de las dincas registradas", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarEmpleados();
+                    EmpleadoInfo.EliminarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id });
+                    MessageBox.Show("Empleado eliminado", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar_Valores.DataSource = CargarEmpleado();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message);
+                }
+            }
+        }
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtBuscar.Text, out int id))
+            {
+                dtResultado = EmpleadoInfo.BuscarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id });
+
+                if (dtResultado.Rows.Count > 0)
+                {
+                    Mostrar_Valores.DataSource = dtResultado;
                 }
                 else
                 {
-                    Mostrar_Valores.DataSource = dtResultados;
+                    MessageBox.Show("No se encontró el puesto con ese ID");
+                    Mostrar_Valores.DataSource = CargarEmpleado();
                 }
             }
             else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }       
+            {
+                MessageBox.Show("Ingrese un número válido");
+            }
+        }
 
-        private void txtId_TextChanged(object sender, EventArgs e)
+        private void btnBuscarSalarioAlto_Click(object sender, EventArgs e)
+        {
+            decimal salarioMin;
+            if (decimal.TryParse(txtBuscarSalario.Text, out salarioMin))
+                Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleadosSalarioAlto(salarioMin);
+            else
+                MessageBox.Show("Ingrese un salario válido.");
+        }
+
+        private void btnContar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdPuesto.Text, out int idPuesto))
+            {
+                int cantidad = EmpleadoInfo.ContarEmpleadosPorPuesto(idPuesto);
+                MessageBox.Show($"Cantidad: {cantidad}");
+            }
+        }
+
+        private void btnEliminarSalarioBajo_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtSalario.Text, out decimal salarioLimite))
+            {
+                EmpleadoInfo.EliminarEmpleadosBajoSalario(salarioLimite);
+                Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleados();
+            }
+        }
+
+        private void btnBuscarPorNombre_Click(object sender, EventArgs e)
+        {
+            string nombreBuscar = txtNombre.Text.Trim();
+            Mostrar_Valores.DataSource = EmpleadoInfo.BuscarEmpleadosPorNombre(nombreBuscar);
+        }
+
+        private void btnTotalSalarios_Click(object sender, EventArgs e)
+        {
+            decimal total = EmpleadoInfo.ObtenerSalarioTotal();
+            MessageBox.Show($"Salario total: ₡{total:N2}");
+        }
+
+        private void btnNombreCompleto_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtId.Text, out int id))
+                MessageBox.Show("Nombre completo: " + EmpleadoInfo.ObtenerNombreCompletoPorID(id));
+        }
+
+        private void btnTotalPorFinca_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdFinca.Text, out int noFinca))
+                MessageBox.Show($"Total por finca: {EmpleadoInfo.TotalEmpleadosPorFinca(noFinca)}");
+        }
+
+        private void btnCorreoInstitucional_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdCorreo.Text, out int id))
+                MessageBox.Show("Correo institucional: " + EmpleadoInfo.TieneCorreoInstitucional(id));
+        }
+
+        private void btnContarRangoSalario_Click(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtSalarioMin.Text, out decimal min) &&
+                decimal.TryParse(txtSalarioMax.Text, out decimal max))
+                lblResultadoRango.Text = $"Total en rango: {EmpleadoInfo.ContarEmpleadosEnRango(min, max)}";
+        }
+
+        private void btnSalarioPromedio_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdPuesto.Text, out int idPuesto))
+                MessageBox.Show($"Promedio: ₡{EmpleadoInfo.ObtenerSalarioPromedioPorPuesto(idPuesto):N2}");
+        }
+
+        private void btnListarEmails_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = EmpleadoInfo.ListarNombreEmailEmpleados();
+        }
+
+        private void btnMayorSalario_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleadosMayorSalario();
+        }
+
+        private void btnVerContactos_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerContactosDeEmpleados();
+        }
+
+        private void btnVerEmpleadosXPuesto_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleadosPorPuesto();
+        }
+
+        public void DiseñoGriew()
+        {
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Coral;
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Bold);
+            Mostrar_Valores.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            //Cambiar el fondo y el color de las celdas (Filas de datos)
+            Mostrar_Valores.DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+            Mostrar_Valores.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            Mostrar_Valores.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 8);
+
+            // Cambiar el color de las filas alternas
+            Mostrar_Valores.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.AliceBlue;
+
+            // Establecer bordes
+            Mostrar_Valores.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            Mostrar_Valores.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Mostrar_Valores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
 
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSalario_TextChanged(object sender, EventArgs e)
+        private void txtBuscarSalario_TextChanged(object sender, EventArgs e)
         {
 
         }
