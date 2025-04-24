@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cortes));
             this.PanelFinca = new System.Windows.Forms.Panel();
+            this.cbFinca = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.Btn_refrescar = new System.Windows.Forms.Button();
             this.Btn_buscar = new System.Windows.Forms.Button();
@@ -39,31 +40,31 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtNomFINCA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Mostrar_Valores = new System.Windows.Forms.DataGridView();
             this.PanelMenu = new System.Windows.Forms.Panel();
-            this.BtnUser = new System.Windows.Forms.Button();
             this.BtnReportes = new System.Windows.Forms.Button();
+            this.BtnUser = new System.Windows.Forms.Button();
+            this.BtnRecoleccion = new System.Windows.Forms.Button();
             this.Recoleccion = new System.Windows.Forms.Button();
             this.BtnPrecio = new System.Windows.Forms.Button();
             this.BtnCorte = new System.Windows.Forms.Button();
             this.BtnFinca = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
-            this.Logo = new System.Windows.Forms.PictureBox();
+            this.btnInicio = new System.Windows.Forms.Button();
             this.PanelFinca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).BeginInit();
             this.PanelMenu.SuspendLayout();
             this.PanelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelFinca
             // 
             this.PanelFinca.AutoSize = true;
+            this.PanelFinca.Controls.Add(this.cbFinca);
             this.PanelFinca.Controls.Add(this.label7);
             this.PanelFinca.Controls.Add(this.Btn_refrescar);
             this.PanelFinca.Controls.Add(this.Btn_buscar);
@@ -73,7 +74,6 @@
             this.PanelFinca.Controls.Add(this.btnEliminar);
             this.PanelFinca.Controls.Add(this.btnEditar);
             this.PanelFinca.Controls.Add(this.btnGuardar);
-            this.PanelFinca.Controls.Add(this.txtNomFINCA);
             this.PanelFinca.Controls.Add(this.label3);
             this.PanelFinca.Controls.Add(this.label2);
             this.PanelFinca.Controls.Add(this.txtID);
@@ -82,8 +82,16 @@
             this.PanelFinca.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelFinca.Location = new System.Drawing.Point(173, 0);
             this.PanelFinca.Name = "PanelFinca";
-            this.PanelFinca.Size = new System.Drawing.Size(981, 511);
+            this.PanelFinca.Size = new System.Drawing.Size(981, 554);
             this.PanelFinca.TabIndex = 9;
+            // 
+            // cbFinca
+            // 
+            this.cbFinca.FormattingEnabled = true;
+            this.cbFinca.Location = new System.Drawing.Point(769, 315);
+            this.cbFinca.Name = "cbFinca";
+            this.cbFinca.Size = new System.Drawing.Size(195, 21);
+            this.cbFinca.TabIndex = 61;
             // 
             // label7
             // 
@@ -104,6 +112,7 @@
             this.Btn_refrescar.Size = new System.Drawing.Size(39, 35);
             this.Btn_refrescar.TabIndex = 59;
             this.Btn_refrescar.UseVisualStyleBackColor = true;
+            this.Btn_refrescar.Click += new System.EventHandler(this.Btn_refrescar_Click);
             // 
             // Btn_buscar
             // 
@@ -114,6 +123,7 @@
             this.Btn_buscar.Size = new System.Drawing.Size(39, 35);
             this.Btn_buscar.TabIndex = 58;
             this.Btn_buscar.UseVisualStyleBackColor = true;
+            this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
             // txtBuscar
             // 
@@ -122,6 +132,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(276, 35);
             this.txtBuscar.TabIndex = 57;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // label5
             // 
@@ -173,14 +184,6 @@
             this.btnGuardar.TabIndex = 51;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtNomFINCA
-            // 
-            this.txtNomFINCA.Location = new System.Drawing.Point(769, 302);
-            this.txtNomFINCA.Multiline = true;
-            this.txtNomFINCA.Name = "txtNomFINCA";
-            this.txtNomFINCA.Size = new System.Drawing.Size(195, 50);
-            this.txtNomFINCA.TabIndex = 48;
             // 
             // label3
             // 
@@ -235,8 +238,9 @@
             // PanelMenu
             // 
             this.PanelMenu.BackColor = System.Drawing.SystemColors.Highlight;
-            this.PanelMenu.Controls.Add(this.BtnUser);
             this.PanelMenu.Controls.Add(this.BtnReportes);
+            this.PanelMenu.Controls.Add(this.BtnUser);
+            this.PanelMenu.Controls.Add(this.BtnRecoleccion);
             this.PanelMenu.Controls.Add(this.Recoleccion);
             this.PanelMenu.Controls.Add(this.BtnPrecio);
             this.PanelMenu.Controls.Add(this.BtnCorte);
@@ -245,8 +249,23 @@
             this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenu.Location = new System.Drawing.Point(0, 0);
             this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(173, 511);
+            this.PanelMenu.Size = new System.Drawing.Size(173, 554);
             this.PanelMenu.TabIndex = 8;
+            // 
+            // BtnReportes
+            // 
+            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnReportes.FlatAppearance.BorderSize = 0;
+            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReportes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.ForeColor = System.Drawing.Color.White;
+            this.BtnReportes.Location = new System.Drawing.Point(0, 380);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(173, 47);
+            this.BtnReportes.TabIndex = 7;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // BtnUser
             // 
@@ -257,7 +276,7 @@
             this.BtnUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnUser.ForeColor = System.Drawing.Color.White;
             this.BtnUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnUser.Image")));
-            this.BtnUser.Location = new System.Drawing.Point(0, 423);
+            this.BtnUser.Location = new System.Drawing.Point(0, 466);
             this.BtnUser.Name = "BtnUser";
             this.BtnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnUser.Size = new System.Drawing.Size(173, 88);
@@ -267,19 +286,20 @@
             this.BtnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnUser.UseVisualStyleBackColor = true;
             // 
-            // BtnReportes
+            // BtnRecoleccion
             // 
-            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReportes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReportes.ForeColor = System.Drawing.Color.White;
-            this.BtnReportes.Location = new System.Drawing.Point(0, 333);
-            this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(173, 47);
-            this.BtnReportes.TabIndex = 5;
-            this.BtnReportes.Text = "Reportes";
-            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnRecoleccion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRecoleccion.FlatAppearance.BorderSize = 0;
+            this.BtnRecoleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRecoleccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRecoleccion.ForeColor = System.Drawing.Color.White;
+            this.BtnRecoleccion.Location = new System.Drawing.Point(0, 333);
+            this.BtnRecoleccion.Name = "BtnRecoleccion";
+            this.BtnRecoleccion.Size = new System.Drawing.Size(173, 47);
+            this.BtnRecoleccion.TabIndex = 5;
+            this.BtnRecoleccion.Text = "Recolección";
+            this.BtnRecoleccion.UseVisualStyleBackColor = true;
+            this.BtnRecoleccion.Click += new System.EventHandler(this.BtnRecoleccion_Click);
             // 
             // Recoleccion
             // 
@@ -324,6 +344,7 @@
             this.BtnCorte.TabIndex = 2;
             this.BtnCorte.Text = "Cortes";
             this.BtnCorte.UseVisualStyleBackColor = true;
+            this.BtnCorte.Click += new System.EventHandler(this.BtnCorte_Click);
             // 
             // BtnFinca
             // 
@@ -342,38 +363,42 @@
             // 
             // PanelLogo
             // 
-            this.PanelLogo.Controls.Add(this.Logo);
+            this.PanelLogo.Controls.Add(this.btnInicio);
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
             this.PanelLogo.Size = new System.Drawing.Size(173, 145);
             this.PanelLogo.TabIndex = 0;
             // 
-            // Logo
+            // btnInicio
             // 
-            this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
-            this.Logo.Location = new System.Drawing.Point(3, 3);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(167, 139);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 0;
-            this.Logo.TabStop = false;
+            this.btnInicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnInicio.BackgroundImage")));
+            this.btnInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnInicio.Location = new System.Drawing.Point(4, 4);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(164, 136);
+            this.btnInicio.TabIndex = 2;
+            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // Frm_Cortes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 511);
+            this.ClientSize = new System.Drawing.Size(1154, 554);
             this.Controls.Add(this.PanelFinca);
             this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Frm_Cortes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Cortes";
+            this.Load += new System.EventHandler(this.Frm_Cortes_Load);
             this.PanelFinca.ResumeLayout(false);
             this.PanelFinca.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).EndInit();
             this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,7 +416,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtNomFINCA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
@@ -399,12 +423,14 @@
         private System.Windows.Forms.DataGridView Mostrar_Valores;
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.Button BtnUser;
-        private System.Windows.Forms.Button BtnReportes;
+        private System.Windows.Forms.Button BtnRecoleccion;
         private System.Windows.Forms.Button Recoleccion;
         private System.Windows.Forms.Button BtnPrecio;
         private System.Windows.Forms.Button BtnCorte;
         private System.Windows.Forms.Button BtnFinca;
         private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.PictureBox Logo;
+        private System.Windows.Forms.ComboBox cbFinca;
+        private System.Windows.Forms.Button BtnReportes;
+        private System.Windows.Forms.Button btnInicio;
     }
 }

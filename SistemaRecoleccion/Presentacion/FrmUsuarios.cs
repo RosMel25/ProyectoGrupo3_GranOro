@@ -24,15 +24,15 @@ namespace Presentacion
             dtINformacion.Columns.Add("Mensaje", typeof(string));
             Mostrar_Valores.DataSource = CargarUser();
             DiseñoGriew();
+
         }
 
         private void limpiarForm()
         {
             txtID.Clear();
             txtNombre.Clear();
-            txtCEDULA.Clear();
+            txtContra.Clear();
             txtEMAIL.Clear();
-            txtROL.Clear();
         }
 
         private DataTable CargarUser()
@@ -45,9 +45,9 @@ namespace Presentacion
 
             string cod = txtID.Text;
             string Nom = txtNombre.Text;
-            string Cedula = txtCEDULA.Text;
+            string Cedula = txtContra.Text;
             string Email = txtEMAIL.Text;
-            string Rol = txtROL.Text;
+            string Rol = CbRol.SelectedItem.ToString();
 
 
             // Guardar Nuevo Registro o editar existente
@@ -68,7 +68,7 @@ namespace Presentacion
                     {
                         int cod_ = int.Parse(cod);
                         UserInfo.GuardarUsuario(new Entidad.Usuarios.ClsUsuario { IdUsuario = cod_, Nombre = Nom, Cedula = Cedula, Email = Email, Rol = Rol });
-                        MessageBox.Show("Finca Registrada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Usuario Registrada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
@@ -146,9 +146,9 @@ namespace Presentacion
                 Editar = true;
                 txtID.Text = Mostrar_Valores.CurrentRow.Cells["ID_USUARIO"].Value.ToString();
                 txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["NOMBRE_USUARIO"].Value.ToString();
-                txtCEDULA.Text = Mostrar_Valores.CurrentRow.Cells["IDENTIFICACION"].Value.ToString();
+                txtContra.Text = Mostrar_Valores.CurrentRow.Cells["CONTRASEÑA"].Value.ToString();
                 txtEMAIL.Text = Mostrar_Valores.CurrentRow.Cells["CORREO_USUARIO"].Value.ToString();
-                txtROL.Text = Mostrar_Valores.CurrentRow.Cells["ROL_USUARIO"].Value.ToString();
+                CbRol.Text = Mostrar_Valores.CurrentRow.Cells["ROL_USUARIO"].Value.ToString();
 
             }
             else
@@ -175,5 +175,9 @@ namespace Presentacion
             Mostrar_Valores.BorderStyle = BorderStyle.Fixed3D;
         }
 
+        private void CbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

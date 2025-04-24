@@ -81,6 +81,52 @@ namespace LogicaNegocio.RecoleccionLN
                 );
         }
 
+        public DataTable VerFinca()
+        {
+            string ProcedimientoBD = "PROCE_CORTE.LISTAR_DATOSFINCA";
+            string TipoProcedimiento = "CUR_DF";
+
+            return data.ejecutarProcedimientoMOSTRAR(ProcedimientoBD, TipoProcedimiento);
+        }
+
+        public DataTable BuscarFinca(string valor)
+        {
+            string ProcedimientoBD = "PROCE_CORTE.BUSCAR_FINCA";
+            string TipoProcedimiento = "BU_FI";
+
+            return data.ejecutarProcedimientoCRUD(
+                ProcedimientoBD,
+                new string[] { TipoProcedimiento },
+                new string[] { valor }
+
+                );
+        }
+
+        public DataTable BuscarCorte(Entidad.ClsCorte NewCorte)
+        {
+            string Procedimiento = "PROCE_CORTE.BUSCAR_CORTE";
+            string TipoProcedimiento = "CUR_UN_CORTE";
+
+            return data.ejecutarProcedimiento_BUSQUEDA(
+                Procedimiento,
+                new string[] { "pNOMBRE" },
+                new string[] { NewCorte.Nom_Corte.ToString() },
+                TipoProcedimiento);
+
+        }
+
+        public DataTable VERFICAR_CORTE(int cod)
+        {
+            string Procedimiento = "PROCE_CORTE.Validar_Registro";
+            string TipoProcedimiento = "CUR_VALIDAR";
+
+            return data.ejecutarProcedimiento_BUSQUEDA(
+                Procedimiento,
+                new string[] { "p_num" },
+                new string[] { cod.ToString() },
+                TipoProcedimiento);
+        }
+
         #endregion
     }
 }

@@ -35,8 +35,8 @@ namespace LogicaNegocio.RecoleccionLN
 
             return data.ejecutarProcedimientoCRUD(
                 Procedimiento,
-                new string[] { "pID", "pNOMBRE", "pMONEDA", "pCAJUELA", "pCUARTILLO" },
-                new string[] {NewPrecio.ID_Precio.ToString(),
+                new string[] { "pNOMBRE", "pMONEDA", "pCAJUELA", "pCUARTILLO" },
+                new string[] {
                     NewPrecio.Nom_Categoria.ToString(),
                     NewPrecio.Tipo_Moneda.ToString(),
                     NewPrecio.Precio_Cajuela.ToString(),
@@ -83,6 +83,19 @@ namespace LogicaNegocio.RecoleccionLN
                 new string[] { Newfinca.No_Finca.ToString() }
 
                 );
+        }
+
+
+        public DataTable VERFICAR_PRECIO(int cod)
+        {
+            string Procedimiento = "PROCE_PRECIOS.Validar_Registro";
+            string TipoProcedimiento = "CUR_VALIDAR";
+
+            return data.ejecutarProcedimiento_BUSQUEDA(
+                Procedimiento,
+                new string[] { "p_num" },
+                new string[] { cod.ToString() },
+                TipoProcedimiento);
         }
 
         #endregion

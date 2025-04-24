@@ -77,13 +77,26 @@ namespace LogicaNegocio.FincaLN
         public DataTable BuscarFinca(Entidad.Finca.ClsFinca Newfinca)
         {
             string Procedimiento = "PROCE_FINCAS.BUSCAR_FINCA";
+            string TipoProcedimiento = "CUR_UNA_FINCA";
 
-            return data.ejecutarProcedimientoCRUD(
+            return data.ejecutarProcedimiento_BUSQUEDA(
                 Procedimiento,
-                new string[] { "pID" },
-                new string[] { Newfinca.No_Finca.ToString() }
+                new string[] { "pID"},
+                new string[] { Newfinca.No_Finca.ToString()}, 
+                TipoProcedimiento);
 
-                );
+        }
+
+        public DataTable VERFICAR_FINCA(int cod)
+        {
+            string Procedimiento = "PROCE_FINCAS.Validar_Registro";
+            string TipoProcedimiento = "CUR_VALIDAR";
+
+            return data.ejecutarProcedimiento_BUSQUEDA(
+                Procedimiento,
+                new string[] { "p_num" },
+                new string[] { cod.ToString() },
+                TipoProcedimiento);
         }
 
         #endregion

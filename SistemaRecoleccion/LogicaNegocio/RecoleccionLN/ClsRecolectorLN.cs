@@ -66,16 +66,17 @@ namespace LogicaNegocio.RecoleccionLN
                 );
         }
 
-        public DataTable BuscarRecolector(Entidad.Finca.ClsFinca Newfinca)
+        public DataTable BuscarRecolector(Entidad.Recoleccion.ClsRecolector NewRecolector)
         {
-            string Procedimiento = "PROCE_RECOLECTOR.BUSCAR_FINCA";
+            string Procedimiento = "PROCE_RECOLECTOR.BUSCAR_RECOLECTOR";
+            string TipoProcedimiento = "CUR_UN_RECOLECTOR";
 
-            return data.ejecutarProcedimientoCRUD(
+            return data.ejecutarProcedimiento_BUSQUEDA(
                 Procedimiento,
                 new string[] { "pID" },
-                new string[] { Newfinca.No_Finca.ToString() }
+                new string[] { NewRecolector.Identificacion.ToString() },
+                TipoProcedimiento);
 
-                );
         }
 
         #endregion

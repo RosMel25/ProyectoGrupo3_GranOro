@@ -30,12 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuarios));
             this.PanelApp = new System.Windows.Forms.Panel();
-            this.txtROL = new System.Windows.Forms.TextBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.CbRol = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Btn_refrescar = new System.Windows.Forms.Button();
-            this.Btn_buscar = new System.Windows.Forms.Button();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -43,7 +40,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtEMAIL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCEDULA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -56,12 +52,9 @@
             // PanelApp
             // 
             this.PanelApp.AutoSize = true;
-            this.PanelApp.Controls.Add(this.txtROL);
+            this.PanelApp.Controls.Add(this.txtContra);
+            this.PanelApp.Controls.Add(this.CbRol);
             this.PanelApp.Controls.Add(this.label7);
-            this.PanelApp.Controls.Add(this.Btn_refrescar);
-            this.PanelApp.Controls.Add(this.Btn_buscar);
-            this.PanelApp.Controls.Add(this.txtBuscar);
-            this.PanelApp.Controls.Add(this.label6);
             this.PanelApp.Controls.Add(this.label5);
             this.PanelApp.Controls.Add(this.txtNombre);
             this.PanelApp.Controls.Add(this.btnEliminar);
@@ -69,7 +62,6 @@
             this.PanelApp.Controls.Add(this.btnGuardar);
             this.PanelApp.Controls.Add(this.txtEMAIL);
             this.PanelApp.Controls.Add(this.label4);
-            this.PanelApp.Controls.Add(this.txtCEDULA);
             this.PanelApp.Controls.Add(this.label3);
             this.PanelApp.Controls.Add(this.label2);
             this.PanelApp.Controls.Add(this.txtID);
@@ -81,67 +73,41 @@
             this.PanelApp.Size = new System.Drawing.Size(1019, 522);
             this.PanelApp.TabIndex = 8;
             // 
-            // txtROL
+            // txtContra
             // 
-            this.txtROL.Location = new System.Drawing.Point(779, 333);
-            this.txtROL.Multiline = true;
-            this.txtROL.Name = "txtROL";
-            this.txtROL.Size = new System.Drawing.Size(185, 30);
-            this.txtROL.TabIndex = 61;
+            this.txtContra.Location = new System.Drawing.Point(781, 216);
+            this.txtContra.Multiline = true;
+            this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '*';
+            this.txtContra.Size = new System.Drawing.Size(203, 28);
+            this.txtContra.TabIndex = 64;
+            // 
+            // CbRol
+            // 
+            this.CbRol.FormattingEnabled = true;
+            this.CbRol.Items.AddRange(new object[] {
+            "RECOLECCION"});
+            this.CbRol.Location = new System.Drawing.Point(803, 312);
+            this.CbRol.Name = "CbRol";
+            this.CbRol.Size = new System.Drawing.Size(181, 21);
+            this.CbRol.TabIndex = 63;
+            this.CbRol.SelectedIndexChanged += new System.EventHandler(this.CbRol_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(659, 333);
+            this.label7.Location = new System.Drawing.Point(679, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 20);
             this.label7.TabIndex = 60;
             this.label7.Text = "Rol de Usuario:";
             // 
-            // Btn_refrescar
-            // 
-            this.Btn_refrescar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_refrescar.BackgroundImage")));
-            this.Btn_refrescar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_refrescar.Location = new System.Drawing.Point(497, 44);
-            this.Btn_refrescar.Name = "Btn_refrescar";
-            this.Btn_refrescar.Size = new System.Drawing.Size(39, 35);
-            this.Btn_refrescar.TabIndex = 59;
-            this.Btn_refrescar.UseVisualStyleBackColor = true;
-            // 
-            // Btn_buscar
-            // 
-            this.Btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Btn_buscar.BackgroundImage")));
-            this.Btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_buscar.Location = new System.Drawing.Point(431, 44);
-            this.Btn_buscar.Name = "Btn_buscar";
-            this.Btn_buscar.Size = new System.Drawing.Size(39, 35);
-            this.Btn_buscar.TabIndex = 58;
-            this.Btn_buscar.UseVisualStyleBackColor = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(135, 44);
-            this.txtBuscar.Multiline = true;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(276, 35);
-            this.txtBuscar.TabIndex = 57;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(51, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "ID Precio:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(674, 94);
+            this.label5.Location = new System.Drawing.Point(694, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(233, 25);
             this.label5.TabIndex = 55;
@@ -149,7 +115,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(761, 183);
+            this.txtNombre.Location = new System.Drawing.Point(781, 160);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(203, 30);
@@ -190,7 +156,7 @@
             // 
             // txtEMAIL
             // 
-            this.txtEMAIL.Location = new System.Drawing.Point(717, 286);
+            this.txtEMAIL.Location = new System.Drawing.Point(737, 263);
             this.txtEMAIL.Multiline = true;
             this.txtEMAIL.Name = "txtEMAIL";
             this.txtEMAIL.Size = new System.Drawing.Size(247, 30);
@@ -200,35 +166,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(659, 286);
+            this.label4.Location = new System.Drawing.Point(679, 263);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 49;
             this.label4.Text = "Email:";
             // 
-            // txtCEDULA
-            // 
-            this.txtCEDULA.Location = new System.Drawing.Point(732, 239);
-            this.txtCEDULA.Multiline = true;
-            this.txtCEDULA.Name = "txtCEDULA";
-            this.txtCEDULA.Size = new System.Drawing.Size(232, 30);
-            this.txtCEDULA.TabIndex = 48;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(659, 239);
+            this.label3.Location = new System.Drawing.Point(679, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 20);
+            this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 47;
-            this.label3.Text = "Cedula:";
+            this.label3.Text = "Contraseña:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(659, 181);
+            this.label2.Location = new System.Drawing.Point(679, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 40);
             this.label2.TabIndex = 46;
@@ -236,7 +194,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(748, 139);
+            this.txtID.Location = new System.Drawing.Point(768, 116);
             this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(216, 30);
@@ -246,7 +204,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(659, 139);
+            this.label1.Location = new System.Drawing.Point(679, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 44;
@@ -257,11 +215,11 @@
             this.Mostrar_Valores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Mostrar_Valores.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Mostrar_Valores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Mostrar_Valores.Location = new System.Drawing.Point(14, 94);
+            this.Mostrar_Valores.Location = new System.Drawing.Point(14, 31);
             this.Mostrar_Valores.Name = "Mostrar_Valores";
             this.Mostrar_Valores.ReadOnly = true;
             this.Mostrar_Valores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Mostrar_Valores.Size = new System.Drawing.Size(632, 302);
+            this.Mostrar_Valores.Size = new System.Drawing.Size(632, 365);
             this.Mostrar_Valores.TabIndex = 43;
             // 
             // FrmUsuarios
@@ -270,7 +228,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 522);
             this.Controls.Add(this.PanelApp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsuarios";
             this.PanelApp.ResumeLayout(false);
             this.PanelApp.PerformLayout();
@@ -283,12 +244,7 @@
         #endregion
 
         private System.Windows.Forms.Panel PanelApp;
-        private System.Windows.Forms.TextBox txtROL;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button Btn_refrescar;
-        private System.Windows.Forms.Button Btn_buscar;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnEliminar;
@@ -296,11 +252,12 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtEMAIL;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCEDULA;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Mostrar_Valores;
+        private System.Windows.Forms.ComboBox CbRol;
+        private System.Windows.Forms.TextBox txtContra;
     }
 }

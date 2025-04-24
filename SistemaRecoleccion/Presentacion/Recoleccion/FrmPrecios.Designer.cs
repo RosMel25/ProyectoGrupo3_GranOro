@@ -49,19 +49,20 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Mostrar_Valores = new System.Windows.Forms.DataGridView();
-            this.PanelMenu = new System.Windows.Forms.Panel();
-            this.BtnUser = new System.Windows.Forms.Button();
-            this.BtnReportes = new System.Windows.Forms.Button();
-            this.BtnRecolector = new System.Windows.Forms.Button();
-            this.BtnPrecio = new System.Windows.Forms.Button();
-            this.BtnCorte = new System.Windows.Forms.Button();
-            this.BtnFinca = new System.Windows.Forms.Button();
             this.PanelLogo = new System.Windows.Forms.Panel();
+            this.BtnFinca = new System.Windows.Forms.Button();
+            this.BtnCorte = new System.Windows.Forms.Button();
+            this.BtnPrecio = new System.Windows.Forms.Button();
+            this.BtnRecolector = new System.Windows.Forms.Button();
+            this.BtnRecoelccion = new System.Windows.Forms.Button();
+            this.BtnUser = new System.Windows.Forms.Button();
+            this.PanelMenu = new System.Windows.Forms.Panel();
+            this.BtnReportes = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.PanelApp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).BeginInit();
-            this.PanelMenu.SuspendLayout();
             this.PanelLogo.SuspendLayout();
+            this.PanelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.PanelApp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelApp.Location = new System.Drawing.Point(173, 0);
             this.PanelApp.Name = "PanelApp";
-            this.PanelApp.Size = new System.Drawing.Size(978, 508);
+            this.PanelApp.Size = new System.Drawing.Size(978, 538);
             this.PanelApp.TabIndex = 7;
             // 
             // txtCUARTILLO
@@ -276,97 +277,14 @@
             this.Mostrar_Valores.Size = new System.Drawing.Size(632, 302);
             this.Mostrar_Valores.TabIndex = 43;
             // 
-            // PanelMenu
+            // PanelLogo
             // 
-            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.PanelMenu.Controls.Add(this.BtnUser);
-            this.PanelMenu.Controls.Add(this.BtnReportes);
-            this.PanelMenu.Controls.Add(this.BtnRecolector);
-            this.PanelMenu.Controls.Add(this.BtnPrecio);
-            this.PanelMenu.Controls.Add(this.BtnCorte);
-            this.PanelMenu.Controls.Add(this.BtnFinca);
-            this.PanelMenu.Controls.Add(this.PanelLogo);
-            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
-            this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(173, 508);
-            this.PanelMenu.TabIndex = 6;
-            // 
-            // BtnUser
-            // 
-            this.BtnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BtnUser.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BtnUser.FlatAppearance.BorderSize = 0;
-            this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnUser.ForeColor = System.Drawing.Color.White;
-            this.BtnUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnUser.Image")));
-            this.BtnUser.Location = new System.Drawing.Point(0, 420);
-            this.BtnUser.Name = "BtnUser";
-            this.BtnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BtnUser.Size = new System.Drawing.Size(173, 88);
-            this.BtnUser.TabIndex = 6;
-            this.BtnUser.Text = "Usuario";
-            this.BtnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.BtnUser.UseVisualStyleBackColor = true;
-            // 
-            // BtnReportes
-            // 
-            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnReportes.FlatAppearance.BorderSize = 0;
-            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnReportes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnReportes.ForeColor = System.Drawing.Color.White;
-            this.BtnReportes.Location = new System.Drawing.Point(0, 333);
-            this.BtnReportes.Name = "BtnReportes";
-            this.BtnReportes.Size = new System.Drawing.Size(173, 47);
-            this.BtnReportes.TabIndex = 5;
-            this.BtnReportes.Text = "Reportes";
-            this.BtnReportes.UseVisualStyleBackColor = true;
-            // 
-            // BtnRecolector
-            // 
-            this.BtnRecolector.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnRecolector.FlatAppearance.BorderSize = 0;
-            this.BtnRecolector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRecolector.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRecolector.ForeColor = System.Drawing.Color.White;
-            this.BtnRecolector.Location = new System.Drawing.Point(0, 286);
-            this.BtnRecolector.Name = "BtnRecolector";
-            this.BtnRecolector.Size = new System.Drawing.Size(173, 47);
-            this.BtnRecolector.TabIndex = 4;
-            this.BtnRecolector.Text = "Recolectores";
-            this.BtnRecolector.UseVisualStyleBackColor = true;
-            // 
-            // BtnPrecio
-            // 
-            this.BtnPrecio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnPrecio.FlatAppearance.BorderSize = 0;
-            this.BtnPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPrecio.ForeColor = System.Drawing.Color.White;
-            this.BtnPrecio.Location = new System.Drawing.Point(0, 239);
-            this.BtnPrecio.Name = "BtnPrecio";
-            this.BtnPrecio.Size = new System.Drawing.Size(173, 47);
-            this.BtnPrecio.TabIndex = 3;
-            this.BtnPrecio.Text = "Precios";
-            this.BtnPrecio.UseVisualStyleBackColor = true;
-            // 
-            // BtnCorte
-            // 
-            this.BtnCorte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnCorte.FlatAppearance.BorderSize = 0;
-            this.BtnCorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCorte.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCorte.ForeColor = System.Drawing.Color.White;
-            this.BtnCorte.Location = new System.Drawing.Point(0, 192);
-            this.BtnCorte.Name = "BtnCorte";
-            this.BtnCorte.Size = new System.Drawing.Size(173, 47);
-            this.BtnCorte.TabIndex = 2;
-            this.BtnCorte.Text = "Cortes";
-            this.BtnCorte.UseVisualStyleBackColor = true;
-            this.BtnCorte.Click += new System.EventHandler(this.BtnCorte_Click);
+            this.PanelLogo.Controls.Add(this.Logo);
+            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
+            this.PanelLogo.Name = "PanelLogo";
+            this.PanelLogo.Size = new System.Drawing.Size(173, 145);
+            this.PanelLogo.TabIndex = 0;
             // 
             // BtnFinca
             // 
@@ -383,14 +301,116 @@
             this.BtnFinca.UseVisualStyleBackColor = true;
             this.BtnFinca.Click += new System.EventHandler(this.BtnFinca_Click);
             // 
-            // PanelLogo
+            // BtnCorte
             // 
-            this.PanelLogo.Controls.Add(this.Logo);
-            this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(173, 145);
-            this.PanelLogo.TabIndex = 0;
+            this.BtnCorte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCorte.FlatAppearance.BorderSize = 0;
+            this.BtnCorte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCorte.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCorte.ForeColor = System.Drawing.Color.White;
+            this.BtnCorte.Location = new System.Drawing.Point(0, 192);
+            this.BtnCorte.Name = "BtnCorte";
+            this.BtnCorte.Size = new System.Drawing.Size(173, 47);
+            this.BtnCorte.TabIndex = 2;
+            this.BtnCorte.Text = "Cortes";
+            this.BtnCorte.UseVisualStyleBackColor = true;
+            this.BtnCorte.Click += new System.EventHandler(this.BtnCorte_Click);
+            // 
+            // BtnPrecio
+            // 
+            this.BtnPrecio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnPrecio.FlatAppearance.BorderSize = 0;
+            this.BtnPrecio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPrecio.ForeColor = System.Drawing.Color.White;
+            this.BtnPrecio.Location = new System.Drawing.Point(0, 239);
+            this.BtnPrecio.Name = "BtnPrecio";
+            this.BtnPrecio.Size = new System.Drawing.Size(173, 47);
+            this.BtnPrecio.TabIndex = 3;
+            this.BtnPrecio.Text = "Precios";
+            this.BtnPrecio.UseVisualStyleBackColor = true;
+            this.BtnPrecio.Click += new System.EventHandler(this.BtnPrecio_Click);
+            // 
+            // BtnRecolector
+            // 
+            this.BtnRecolector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRecolector.FlatAppearance.BorderSize = 0;
+            this.BtnRecolector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRecolector.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRecolector.ForeColor = System.Drawing.Color.White;
+            this.BtnRecolector.Location = new System.Drawing.Point(0, 286);
+            this.BtnRecolector.Name = "BtnRecolector";
+            this.BtnRecolector.Size = new System.Drawing.Size(173, 47);
+            this.BtnRecolector.TabIndex = 4;
+            this.BtnRecolector.Text = "Recolectores";
+            this.BtnRecolector.UseVisualStyleBackColor = true;
+            this.BtnRecolector.Click += new System.EventHandler(this.BtnRecolector_Click);
+            // 
+            // BtnRecoelccion
+            // 
+            this.BtnRecoelccion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnRecoelccion.FlatAppearance.BorderSize = 0;
+            this.BtnRecoelccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRecoelccion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRecoelccion.ForeColor = System.Drawing.Color.White;
+            this.BtnRecoelccion.Location = new System.Drawing.Point(0, 333);
+            this.BtnRecoelccion.Name = "BtnRecoelccion";
+            this.BtnRecoelccion.Size = new System.Drawing.Size(173, 47);
+            this.BtnRecoelccion.TabIndex = 5;
+            this.BtnRecoelccion.Text = "Recolección";
+            this.BtnRecoelccion.UseVisualStyleBackColor = true;
+            this.BtnRecoelccion.Click += new System.EventHandler(this.BtnRecoelccion_Click);
+            // 
+            // BtnUser
+            // 
+            this.BtnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnUser.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnUser.FlatAppearance.BorderSize = 0;
+            this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUser.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnUser.ForeColor = System.Drawing.Color.White;
+            this.BtnUser.Image = ((System.Drawing.Image)(resources.GetObject("BtnUser.Image")));
+            this.BtnUser.Location = new System.Drawing.Point(0, 450);
+            this.BtnUser.Name = "BtnUser";
+            this.BtnUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BtnUser.Size = new System.Drawing.Size(173, 88);
+            this.BtnUser.TabIndex = 6;
+            this.BtnUser.Text = "Usuario";
+            this.BtnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnUser.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.BtnUser.UseVisualStyleBackColor = true;
+            // 
+            // PanelMenu
+            // 
+            this.PanelMenu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.PanelMenu.Controls.Add(this.BtnReportes);
+            this.PanelMenu.Controls.Add(this.BtnUser);
+            this.PanelMenu.Controls.Add(this.BtnRecoelccion);
+            this.PanelMenu.Controls.Add(this.BtnRecolector);
+            this.PanelMenu.Controls.Add(this.BtnPrecio);
+            this.PanelMenu.Controls.Add(this.BtnCorte);
+            this.PanelMenu.Controls.Add(this.BtnFinca);
+            this.PanelMenu.Controls.Add(this.PanelLogo);
+            this.PanelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelMenu.Location = new System.Drawing.Point(0, 0);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(173, 538);
+            this.PanelMenu.TabIndex = 6;
+            // 
+            // BtnReportes
+            // 
+            this.BtnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnReportes.FlatAppearance.BorderSize = 0;
+            this.BtnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnReportes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnReportes.ForeColor = System.Drawing.Color.White;
+            this.BtnReportes.Location = new System.Drawing.Point(0, 380);
+            this.BtnReportes.Name = "BtnReportes";
+            this.BtnReportes.Size = new System.Drawing.Size(173, 47);
+            this.BtnReportes.TabIndex = 7;
+            this.BtnReportes.Text = "Reportes";
+            this.BtnReportes.UseVisualStyleBackColor = true;
+            this.BtnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // Logo
             // 
@@ -399,23 +419,27 @@
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(167, 139);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 0;
+            this.Logo.TabIndex = 1;
             this.Logo.TabStop = false;
+            this.Logo.Click += new System.EventHandler(this.Logo_Click);
             // 
             // FrmPrecios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 508);
+            this.ClientSize = new System.Drawing.Size(1151, 538);
             this.Controls.Add(this.PanelApp);
             this.Controls.Add(this.PanelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPrecios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrecios";
             this.PanelApp.ResumeLayout(false);
             this.PanelApp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).EndInit();
-            this.PanelMenu.ResumeLayout(false);
             this.PanelLogo.ResumeLayout(false);
+            this.PanelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -442,16 +466,17 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Mostrar_Valores;
-        private System.Windows.Forms.Panel PanelMenu;
-        private System.Windows.Forms.Button BtnUser;
-        private System.Windows.Forms.Button BtnReportes;
-        private System.Windows.Forms.Button BtnRecolector;
-        private System.Windows.Forms.Button BtnPrecio;
-        private System.Windows.Forms.Button BtnCorte;
-        private System.Windows.Forms.Button BtnFinca;
-        private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.TextBox txtCUARTILLO;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel PanelLogo;
+        private System.Windows.Forms.Button BtnFinca;
+        private System.Windows.Forms.Button BtnCorte;
+        private System.Windows.Forms.Button BtnPrecio;
+        private System.Windows.Forms.Button BtnRecolector;
+        private System.Windows.Forms.Button BtnRecoelccion;
+        private System.Windows.Forms.Button BtnUser;
+        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Button BtnReportes;
+        private System.Windows.Forms.PictureBox Logo;
     }
 }

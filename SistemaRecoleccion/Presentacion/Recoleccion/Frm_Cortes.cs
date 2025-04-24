@@ -23,15 +23,72 @@ namespace Presentacion.Recoleccion
             dtINformacion.Columns.Add("Mensaje", typeof(string));
             Mostrar_Valores.DataSource = CargarCorte();
             DiseñoGriew();
+            Listarfinca();
         }
 
         private void limpiarForm()
         {
             txtID.Clear();
             txtNomCorte.Clear();
-            txtNomFINCA.Clear();
+
         }
 
+        public int Verificar_eliminar(int cod)
+        {
+
+            dtINformacion = CorteInfo.VERFICAR_CORTE(cod);
+            string dato = dtINformacion.Rows[0]["TOTAL"].ToString();
+            int count = int.Parse(dato);
+            return count;
+        }
+
+        private string Validarfinca() { 
+
+            string valorBuscado = cbFinca.Text;
+            string cod;
+
+            dtINformacion = CorteInfo.VerFinca();
+
+            DataRow[] filas = dtINformacion.Select($"NOMBRE_FINCA = '{valorBuscado}'");
+
+            if (filas.Length > 0)
+            {
+                DataRow fila = filas[0]; // Primera coincidencia
+                cod = fila["NO_FINCA"].ToString();
+
+                return cod;
+
+            }
+            else
+            {
+                return cod = " Incorrecto ";
+            }
+
+            }
+
+        private  void Listarfinca()
+        {
+            dtINformacion = CorteInfo.VerFinca();
+
+               if (dtINformacion.Rows.Count == 0)
+               {
+                    MessageBox.Show("Por Favor primero registre un finca", "No Hay Fincas Registradas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmFincas formulario2 = new FrmFincas();
+
+                    // Mostrar Form2
+                    formulario2.Show();
+
+                    // Opcionalmente, ocultar Form1 si es necesario
+                    this.Hide();
+                }
+               else
+               {
+                cbFinca.DataSource = dtINformacion;
+                cbFinca.DisplayMember = "Finca";
+                cbFinca.ValueMember = "NOMBRE_FINCA";
+               }
+
+        }
         private DataTable CargarCorte()
         {
             return CorteInfo.MostrarCorte();
@@ -41,7 +98,7 @@ namespace Presentacion.Recoleccion
         {
             string cod = txtID.Text;
             string Nom = txtNomCorte.Text;
-            string Finca = txtNomFINCA.Text;
+            string Finca = Validarfinca();
 
 
 
@@ -116,15 +173,26 @@ namespace Presentacion.Recoleccion
         {
             string Datofila;
             int Cod;
+            int Valor_Count;
 
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
 
                 Datofila = Mostrar_Valores.CurrentRow.Cells["ID_CORTE"].Value.ToString();
                 Cod = int.Parse(Datofila);
-                CorteInfo.EliminarCorte(new Entidad.ClsCorte { ID_Corte = Cod });
-                MessageBox.Show("Registro Eliminado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mostrar_Valores.DataSource = CargarCorte();
+                Valor_Count = Verificar_eliminar(Cod);
+
+                if (Valor_Count == 0)
+                {
+                    CorteInfo.EliminarCorte(new Entidad.ClsCorte { ID_Corte = Cod });
+                    MessageBox.Show("Registro Eliminado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar_Valores.DataSource = CargarCorte();
+                }
+                else
+                {
+                    MessageBox.Show("El Corte a eliminar cuenta con datos asociados", "Elimine los reportes Primero", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
                 MessageBox.Show("Debe seleccionar el registro a eliminar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -139,7 +207,7 @@ namespace Presentacion.Recoleccion
                 Editar = true;
                 txtID.Text = Mostrar_Valores.CurrentRow.Cells["ID_CORTE"].Value.ToString();
                 txtNomCorte.Text = Mostrar_Valores.CurrentRow.Cells["NOMBRE_CORTE"].Value.ToString();
-                txtNomFINCA.Text = Mostrar_Valores.CurrentRow.Cells["NO_FINCA"].Value.ToString();
+                cbFinca.Text = Mostrar_Valores.CurrentRow.Cells["NOMBRE_FINCA"].Value.ToString();
 
 
             }
@@ -176,6 +244,9 @@ namespace Presentacion.Recoleccion
 
             // Mostrar Form2
             formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
 
         private void BtnPrecio_Click(object sender, EventArgs e)
@@ -184,6 +255,9 @@ namespace Presentacion.Recoleccion
 
             // Mostrar Form2
             formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
 
         private void Recoleccion_Click(object sender, EventArgs e)
@@ -192,6 +266,88 @@ namespace Presentacion.Recoleccion
 
             // Mostrar Form2
             formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void Frm_Cortes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+            string DatoBuscar = txtBuscar.Text;
+
+            if (DatoBuscar.Equals(""))
+            {
+                MessageBox.Show("Ho hay ningun valor para buscar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                dtINformacion = CorteInfo.BuscarCorte(new Entidad.ClsCorte  { Nom_Corte = DatoBuscar });
+
+                if (dtINformacion.Rows.Count == 0)
+                {
+                    MessageBox.Show("El nombre digitado no corresponde a ninguno de los Recolectores registrados", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarCorte();
+                }
+                else
+                {
+                    Mostrar_Valores.DataSource = dtINformacion;
+                }
+
+            }
+        }
+
+        private void Btn_refrescar_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = CargarCorte();
+            txtBuscar.Clear();
+            limpiarForm();
+        }
+
+        private void BtnRecoleccion_Click(object sender, EventArgs e)
+        {
+            FrmRecolecion formulario2 = new FrmRecolecion();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes formulario2 = new FrmReportes();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnCorte_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmInicio formulario2 = new FrmInicio();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Presentacion.Recoleccion
             dtINformacion.Columns.Add("Mensaje", typeof(string));
             Mostrar_Valores.DataSource = CargarPrecio();
             DiseñoGriew();
+            txtID.Enabled = false;
         }
 
         private void limpiarForm()
@@ -39,9 +40,18 @@ namespace Presentacion.Recoleccion
             return PrecioInfo.MostrarPrecio();
         }
 
+        public int Verificar_eliminar(int cod)
+        {
+
+            dtINformacion = PrecioInfo.VERFICAR_PRECIO(cod);
+            string dato = dtINformacion.Rows[0]["TOTAL"].ToString();
+            int count = int.Parse(dato);
+            return count;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string cod = txtID.Text;
+            string COD = txtID.Text;
             string Nom = txtNombre.Text;
             string Moneda = txtMONEDA.Text;
             string Caj = txtCAJUELA.Text;
@@ -53,22 +63,23 @@ namespace Presentacion.Recoleccion
             {
                 try
                 {
-                    if (!Regex.IsMatch(cod, "^[0-9]+$"))
+
+                    if (!Regex.IsMatch(Caj, "^[0-9]+$") || !Regex.IsMatch(Cuar, "^[0-9]+$"))
                     {
                         MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtID.Text = "";
                     }
-                    if (cod.Equals("") || Nom.Equals("") || Moneda.Equals("") || Caj.Equals("") || Cuar.Equals(""))
+
+                    if (Nom.Equals("") || Moneda.Equals("") || Caj.Equals("") || Cuar.Equals(""))
                     {
                         MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        int cod_ = int.Parse(cod);
                         int cajuela = int.Parse(Caj);
                         int cuartillo = int.Parse(Cuar);
-                        PrecioInfo.GuardarPrecio(new Entidad.ClsPrecio { ID_Precio = cod_, Nom_Categoria = Nom, Tipo_Moneda = Moneda, Precio_Cajuela = cajuela, Precio_Cuartilo = cuartillo });
-                        MessageBox.Show("Finca Registrada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PrecioInfo.GuardarPrecio(new Entidad.ClsPrecio { Nom_Categoria = Nom, Tipo_Moneda = Moneda, Precio_Cajuela = cajuela, Precio_Cuartilo = cuartillo });
+                        MessageBox.Show("PRECIO AGREGADO", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
@@ -84,26 +95,23 @@ namespace Presentacion.Recoleccion
             if (Editar == true)
             {
 
-                txtID.Enabled = true;
-
                 try
                 {
-                    if (!Regex.IsMatch(cod, "^[0-9]+$"))
+                    if (!Regex.IsMatch(Caj, "^[0-9]+$") || !Regex.IsMatch(Cuar, "^[0-9]+$"))
                     {
                         MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtID.Text = "";
                     }
-                    if (cod.Equals("") || Nom.Equals(""))
+                    if (Nom.Equals("") || Moneda.Equals("") || Caj.Equals("") || Cuar.Equals(""))
                     {
                         MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-                        int cod_ = int.Parse(cod);
                         int cajuela = int.Parse(Caj);
                         int cuartillo = int.Parse(Cuar);
-                        PrecioInfo.EditarPrecio(new Entidad.ClsPrecio { ID_Precio = cod_, Nom_Categoria = Nom, Tipo_Moneda = Moneda, Precio_Cajuela = cajuela, Precio_Cuartilo = cuartillo });
-                        MessageBox.Show("Finca Actualizada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        PrecioInfo.EditarPrecio(new Entidad.ClsPrecio { ID_Precio = int.Parse(COD), Nom_Categoria = Nom, Tipo_Moneda = Moneda, Precio_Cajuela = cajuela, Precio_Cuartilo = cuartillo });
+                        MessageBox.Show("Precio Actualizado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
@@ -123,15 +131,29 @@ namespace Presentacion.Recoleccion
         {
             string Datofila;
             int Cod;
+            int Valor_Count;
 
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
 
+
+
                 Datofila = Mostrar_Valores.CurrentRow.Cells["ID_PRECIO"].Value.ToString();
                 Cod = int.Parse(Datofila);
-                PrecioInfo.EliminarPrecio(new Entidad.ClsPrecio { ID_Precio = Cod });
-                MessageBox.Show("Registro Eliminado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mostrar_Valores.DataSource = CargarPrecio();
+
+                Valor_Count = Verificar_eliminar(Cod);
+
+                if (Valor_Count == 0)
+                {
+                    PrecioInfo.EliminarPrecio(new Entidad.ClsPrecio { ID_Precio = Cod });
+                    MessageBox.Show("Registro Eliminado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar_Valores.DataSource = CargarPrecio();
+                }
+                else
+                {
+                    MessageBox.Show("El Precio a eliminar cuenta con datos asociados", "Elimine los reportes Primero", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
                 MessageBox.Show("Debe seleccionar el registro a eliminar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -181,6 +203,9 @@ namespace Presentacion.Recoleccion
 
             // Mostrar Form2
             formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
 
         private void BtnFinca_Click(object sender, EventArgs e)
@@ -189,6 +214,58 @@ namespace Presentacion.Recoleccion
 
             // Mostrar Form2
             formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnPrecio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRecolector_Click(object sender, EventArgs e)
+        {
+            FrmRecolector formulario2 = new FrmRecolector();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnRecoelccion_Click(object sender, EventArgs e)
+        {
+            FrmRecolecion formulario2 = new FrmRecolecion();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes formulario2 = new FrmReportes();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            FrmInicio formulario2 = new FrmInicio();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
     }
 }

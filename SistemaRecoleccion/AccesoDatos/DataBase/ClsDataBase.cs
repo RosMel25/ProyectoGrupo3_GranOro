@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 
 namespace AccesoDatos.DataBase
 {
@@ -53,10 +54,9 @@ namespace AccesoDatos.DataBase
         #endregion
 
 
-    
+
 
         #region metodos Publicos.
-
 
 
 
@@ -82,7 +82,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     string procedure = procedureName;
                     string[] param = paramNames;
@@ -103,6 +103,7 @@ namespace AccesoDatos.DataBase
                 {
                     ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection);
                     ObjOracleCommand.Parameters.Add(new OracleParameter(TipoProcedimiento, OracleDbType.RefCursor, ParameterDirection.Output));
+
                         //TipoProcedimiento, OracleDbType.RefCursor, ParameterDirection.Output);
                     
                     ObjOracleCommand.CommandType = CommandType.StoredProcedure;
@@ -114,7 +115,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     string procedure = procedureName;
                     string param = TipoProcedimiento;
@@ -125,8 +126,8 @@ namespace AccesoDatos.DataBase
 
         }
 
-        // Nueva sobrecarga: procedimientos con parámetros IN y SYS_REFCURSOR
-        public DataTable ejecutarProcedimientoMOSTRAR(string procedureName, string[] paramNames, object[] paramValues, string outputCursorName)
+
+        public DataTable ejecutarProcedimiento_BUSQUEDA(string procedureName, string[] paramNames, string[] valueNames, string Cursor)
         {
             DsResultados1.Tables.Clear();
             using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
@@ -134,89 +135,75 @@ namespace AccesoDatos.DataBase
                 ObjOracleConnection.Open();
                 try
                 {
-                    ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection);
-                    ObjOracleCommand.CommandType = CommandType.StoredProcedure;
-
-                    // Agregar parámetros de entrada
-                    for (int i = 0; i < paramNames.Length; i++)
+                    using (ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection))
                     {
-                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
+                        ObjOracleCommand.CommandType = CommandType.StoredProcedure;
+
+                        for (int i = 0; i < paramNames.Length; i++)
+                        {
+                            ObjOracleCommand.Parameters.Add(paramNames[i], valueNames[i]);
+                        }
+
+                        OracleParameter output = ObjOracleCommand.Parameters.Add(Cursor, OracleDbType.RefCursor);
+                        output.Direction = ParameterDirection.Output;
+
+                        ObjOracleDataAdapter = new OracleDataAdapter();
+                        ObjOracleDataAdapter.SelectCommand = ObjOracleCommand;
+                        ObjOracleDataAdapter.Fill(DsResultados1);
+                        return DsResultados1.Tables[0];
                     }
 
-                    // Agregar parámetro de salida tipo cursor
-                    ObjOracleCommand.Parameters.Add(outputCursorName, OracleDbType.RefCursor, ParameterDirection.Output);
 
-                    // Ejecutar
-                    ObjOracleDataAdapter = new OracleDataAdapter();
-                    ObjOracleDataAdapter.SelectCommand = ObjOracleCommand;
-                    ObjOracleDataAdapter.Fill(DsResultados1);
-
-                    return DsResultados1.Tables[0];
                 }
-                catch (Exception)
-                {                    
+                catch (Exception e)
+                {
+                    string procedure = procedureName;
+                    string[] param = paramNames;
+                    string[] valueName = valueNames;
                     return null;
                 }
             }
+
         }
 
-        public int ejecutarProcedimientoScalar(string procedureName, string[] paramNames, object[] paramValues, string outputParamName)
+
+        public int ejecutarProcedimientoValidar(string procedureName, string paramNames, string valueNames)
         {
+            decimal resultado = 0;
+            int datos=0;
+
+
             using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
             {
                 ObjOracleConnection.Open();
-                try
+
+                using (ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection))
                 {
-                    ObjOracleCommand = new OracleCommand(procedureName, ObjOracleConnection);
-                    ObjOracleCommand.CommandType = CommandType.StoredProcedure;
+                    ObjOracleCommand.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    // Param IN
-                    for (int i = 0; i < paramNames.Length; i++)
-                    {
-                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
-                    }
+                    ObjOracleCommand.Parameters.Add(paramNames, OracleDbType.Int32).Value = int.Parse(valueNames);
 
-                    // Param OUT
-                    OracleParameter outputParam = new OracleParameter(outputParamName, OracleDbType.Int32);
-                    outputParam.Direction = ParameterDirection.Output;
-                    ObjOracleCommand.Parameters.Add(outputParam);
+                    // Parámetro de salida: nombre del empleado
+                   ObjOracleCommand.Parameters.Add("return_value", OracleDbType.Decimal).Direction = System.Data.ParameterDirection.ReturnValue;
 
+                    // Ejecutar el comando
                     ObjOracleCommand.ExecuteNonQuery();
 
-                    return Convert.ToInt32(outputParam.Value);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al ejecutar procedimiento scalar: " + ex.Message);
-                    return -1;
-                }
-            }
-        }
-        public string ejecutarFuncionScalar(string functionName, string[] paramNames, object[] paramValues)
-        {
-            using (ObjOracleConnection = new OracleConnection(Ruta_NomBD))
-            {
-                ObjOracleConnection.Open();
-                try
-                {
-                    string sql = $"SELECT {functionName}(:{string.Join(", :", paramNames)}) FROM DUAL";
-                    ObjOracleCommand = new OracleCommand(sql, ObjOracleConnection);
-                    ObjOracleCommand.CommandType = CommandType.Text;
-                    for (int i = 0; i < paramNames.Length; i++)
-                    {
-                        ObjOracleCommand.Parameters.Add(paramNames[i], paramValues[i]);
-                    }
-                    object result = ObjOracleCommand.ExecuteScalar();
-                    return result?.ToString() ?? "NO ENCONTRADO";
-                }
-                catch (Exception ex)
-                {
-                    return "ERROR: " + ex.Message;
+                    // Obtener el valor de retorno
+
+                    resultado = Convert.ToDecimal(ObjOracleCommand.Parameters["return_value"].Value);
+
+                    datos = (int)resultado;
+
+                    return datos;
                 }
             }
+
         }
+
+
+        #endregion
+
+
     }
-    #endregion
-
-
 }

@@ -238,5 +238,73 @@ namespace Presentacion.Recoleccion
         {
 
         }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+            string DatoBuscar = txtBuscar.Text;
+            int Cod;
+
+            if (DatoBuscar.Equals(""))
+            {
+                MessageBox.Show("Ho hay ningun valor para buscar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Cod = int.Parse(DatoBuscar);
+                dtINformacion = RecolectorInfo.BuscarRecolector(new Entidad.Recoleccion.ClsRecolector { Identificacion = Cod });
+
+                if (dtINformacion.Rows.Count == 0)
+                {
+                    MessageBox.Show("El numero de identificación no corresponde a ninguno de los Recolectores registrados", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarRecolector();
+                }
+                else
+                {
+                    Mostrar_Valores.DataSource = dtINformacion;
+                }
+
+            }
+        }
+
+        private void Btn_refrescar_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = CargarRecolector();
+            txtBuscar.Clear();
+            limpiarForm();
+
+        }
+
+        private void BtnRecoleccion_Click(object sender, EventArgs e)
+        {
+            FrmRecolecion formulario2 = new FrmRecolecion();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes formulario2 = new FrmReportes();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void Logo_Click(object sender, EventArgs e)
+        {
+            FrmInicio formulario2 = new FrmInicio();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace LogicaNegocio
 
             return data.ejecutarProcedimientoCRUD(
                 Procedimiento,
-                new string[] { "pID", "pNOMBRE", "pCEDULA", "pEMAIL", "pROL" },
+                new string[] { "pID", "pNOMBRE", "pCONTRASEÑA", "pEMAIL", "pROL" },
                 new string[] {NewUser.IdUsuario.ToString(),
                     NewUser.Nombre.ToString(),
                     NewUser.Cedula.ToString(),
@@ -62,7 +62,7 @@ namespace LogicaNegocio
 
             return data.ejecutarProcedimientoCRUD(
                 Procedimiento,
-                new string[] { "pID", "pNOMBRE", "pCEDULA", "pEMAIL", "pROL" },
+                new string[] { "pID", "pNOMBRE", "pCONTRASEÑA", "pEMAIL", "pROL" },
                 new string[] { NewUser.IdUsuario.ToString(),
                     NewUser.Nombre.ToString(),
                     NewUser.Cedula.ToString(),
@@ -72,16 +72,18 @@ namespace LogicaNegocio
                 );
         }
 
-        public DataTable BuscarPrecio(Entidad.Finca.ClsFinca Newfinca)
+
+        public DataTable VALIDAR_USER(string user, string contra)
         {
-            string Procedimiento = "PROCE_CORTE.BUSCAR_FINCA";
+            string Procedimiento = "PROCE_USUARIOS.VERIFICAR_USER";
+            string TipoProcedimiento = "CUR_USER";
 
-            return data.ejecutarProcedimientoCRUD(
+            return data.ejecutarProcedimiento_BUSQUEDA(
                 Procedimiento,
-                new string[] { "pID" },
-                new string[] { Newfinca.No_Finca.ToString() }
+                new string[] { "pID", "pCONTRASEÑA" },
+                new string[] { user, contra },
+                TipoProcedimiento);
 
-                );
         }
 
         #endregion

@@ -47,7 +47,9 @@
     <Compile Include="PuestoLN\PuestoLN.cs" />
     <Compile Include="RecoleccionLN\ClsCortesLN.cs" />
     <Compile Include="RecoleccionLN\ClsPreciosLG.cs" />
+    <Compile Include="RecoleccionLN\ClsRecoleccionLN.cs" />
     <Compile Include="RecoleccionLN\ClsRecolectorLN.cs" />
+    <Compile Include="RecoleccionLN\ClsReporteLN.cs" />
     <Compile Include="RecoleccionLN\FincaLN.cs" />
     <Compile Include="Vehiculos\ClsMantvehiculos.cs" />
     <Compile Include="Vehiculos\ClsVehiculos.cs" />

@@ -33,6 +33,14 @@ namespace Presentacion.Recoleccion
             txtTamaño.Clear();
             txtUbicacion.Clear();
         }
+
+        public int Verificar_eliminar(int cod) {
+     
+            dtINformacion = FincaInfo.VERFICAR_FINCA(cod);
+            string dato = dtINformacion.Rows[0]["TOTAL"].ToString();
+            int count = int.Parse(dato);
+            return count;
+        }
         private DataTable CargarFinca()
         {
             return FincaInfo.MostrarFinca();
@@ -51,7 +59,7 @@ namespace Presentacion.Recoleccion
             {
                 try
                 {
-                    if (!Regex.IsMatch(cod, "^[0-9]+$"))
+                    if (!Regex.IsMatch(cod,  "^[0-9]+$") && !Regex.IsMatch(Tam, "^[0-9]+$"))
                     {
                         MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtNoFinca.Text = "";
@@ -64,7 +72,7 @@ namespace Presentacion.Recoleccion
                     {
                         int cod_ = int.Parse(cod);
                         FincaInfo.GuardarFinca(new Entidad.Finca.ClsFinca{ No_Finca = cod_, Nom_Finca = Nom, Tam_Finca = Tam, Ubi_Finca = Ubi });
-                        MessageBox.Show("Finca Registrada", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Finca Registrada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
@@ -82,7 +90,7 @@ namespace Presentacion.Recoleccion
                 txtNoFinca.Enabled = true;
                 try
                 {
-                    if (!Regex.IsMatch(cod, "^[0-9]+$"))
+                    if (!Regex.IsMatch(cod, "^[0-9]+$") || !Regex.IsMatch(Tam, "^[0-9]+$"))
                     {
                         MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtNoFinca.Text = "";
@@ -95,7 +103,7 @@ namespace Presentacion.Recoleccion
                     {
                         int cod_ = int.Parse(cod);
                         FincaInfo.EditarFinca(new Entidad.Finca.ClsFinca { No_Finca = cod_, Nom_Finca = Nom, Tam_Finca = Tam, Ubi_Finca = Ubi });
-                        MessageBox.Show("Finca Actualizada", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Finca Actualizada", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
                     }
@@ -105,7 +113,7 @@ namespace Presentacion.Recoleccion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al guardar los datos: " + ex, "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al guardar los datos: " + ex, "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -125,49 +133,64 @@ namespace Presentacion.Recoleccion
 
             }
             else
-                MessageBox.Show("Debe seleccionar el registro a editar", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar el registro a editar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             string Datofila;
             int Cod;
+            int Valor_Count; 
 
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
 
                 Datofila = Mostrar_Valores.CurrentRow.Cells["NO_FINCA"].Value.ToString();
                 Cod = int.Parse(Datofila);
-                FincaInfo.EliminarFinca(new Entidad.Finca.ClsFinca { No_Finca = Cod });
-                MessageBox.Show("Registro Eliminado", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mostrar_Valores.DataSource = CargarFinca();
+                Valor_Count = Verificar_eliminar(Cod);
+
+                if (Valor_Count == 0) 
+                {
+                    FincaInfo.EliminarFinca(new Entidad.Finca.ClsFinca { No_Finca = Cod });
+                    MessageBox.Show("Registro Eliminado", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mostrar_Valores.DataSource = CargarFinca();
+                }
+                else
+                {
+                    MessageBox.Show("La finca a eliminar cuenta con cortes registrados en ella", "Elimine los Registros Primero", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
             }
             else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar el registro a eliminar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-           /* string DatoBuscar = txtBuscar.Text;
-            int Cod;
+           string DatoBuscar = txtBuscar.Text;
+           int Cod;
 
             if (DatoBuscar.Equals(""))
+            {
+                MessageBox.Show("Ho hay ningun valor para buscar", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
             {
                 Cod = int.Parse(DatoBuscar);
                 dtINformacion = FincaInfo.BuscarFinca(new Entidad.Finca.ClsFinca { No_Finca = Cod });
 
                 if (dtINformacion.Rows.Count == 0)
                 {
-                    MessageBox.Show("El numero de finca no corresponde a ninguna de las dincas registradas", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El numero de finca no corresponde a ninguna de las Fincas registradas", "Informacion incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarFinca();
                 }
                 else
                 {
                     Mostrar_Valores.DataSource = dtINformacion;
                 }
+
             }
-            else
-                MessageBox.Show("Debe seleccionar el registro a eliminar", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+            
         }
 
         #region Validaciones
@@ -252,6 +275,46 @@ namespace Presentacion.Recoleccion
         private void BtnFinca_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_refrescar_Click(object sender, EventArgs e)
+        {
+            Mostrar_Valores.DataSource = CargarFinca();
+            txtBuscar.Clear();
+            limpiarForm();
+        }
+
+        private void BtnRecoleccion_Click(object sender, EventArgs e)
+        {
+            FrmRecolecion formulario2 = new FrmRecolecion();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes formulario2 = new FrmReportes();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmInicio formulario2 = new FrmInicio();
+
+            // Mostrar Form2
+            formulario2.Show();
+
+            // Opcionalmente, ocultar Form1 si es necesario
+            this.Hide();
         }
     }
 }

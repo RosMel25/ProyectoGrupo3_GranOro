@@ -37,16 +37,16 @@ C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\Logic
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.pdb
 C:\Users\aj199\OneDrive\Escritorio\Final Proyecto\hshsh\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.dll
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.dll
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\Oracle.DataAccess.dll
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.pdb
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.pdb
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.dll
-C:\Users\roble\source\repos\RosMel25\ProyectoGrupo3_GranOro\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.dll
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\Oracle.DataAccess.dll
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\AccesoDatos.dll.config
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\bin\Debug\Entidad.pdb
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNe.53575492.Up2Date
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\aj199\Music\SistemaRecoleccion\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
