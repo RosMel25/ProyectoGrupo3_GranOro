@@ -1,0 +1,93 @@
+CREATE OR REPLACE FUNCTION total_cajuelas_por_recolector(p_identificacion VARCHAR2)
+RETURN NUMBER
+IS
+  total NUMBER;
+BEGIN
+  SELECT SUM(CANTIDAD_CAJUELAS)
+  INTO total
+  FROM RECOLECCION
+  WHERE IDENTIFICACION_RECOLECTOR = p_identificacion;
+
+  RETURN NVL(total, 0);
+END;
+
+//SELECT total_cajuelas_por_recolector('1234567890') FROM DUAL;
+
+
+
+
+CREATE OR REPLACE FUNCTION promedio_pago_por_corte(p_id_corte NUMBER)
+RETURN NUMBER
+IS
+  promedio NUMBER;
+BEGIN
+  SELECT AVG(PAGO_TOTAL)
+  INTO promedio
+  FROM RECOLECCION
+  WHERE ID_CORTE = p_id_corte;
+
+  RETURN NVL(promedio, 0);
+END;
+
+//SELECT promedio_pago_por_corte(1) FROM DUAL;
+
+
+
+
+CREATE OR REPLACE FUNCTION ultima_recoleccion_finca(p_no_finca NUMBER)
+RETURN DATE
+IS
+  fecha DATE;
+BEGIN
+  SELECT MAX(FECHA_RECOLECCION)
+  INTO fecha
+  FROM RECOLECCION
+  WHERE NO_FINCA = p_no_finca;
+
+  RETURN fecha;
+END;
+
+//SELECT ultima_recoleccion_finca(101) FROM DUAL;
+
+
+
+
+CREATE OR REPLACE FUNCTION cuartillos_por_fecha(p_fecha DATE)
+RETURN NUMBER
+IS
+  total NUMBER;
+BEGIN
+  SELECT SUM(CANTIDAD_CUARTILLOS)
+  INTO total
+  FROM RECOLECCION
+  WHERE TRUNC(FECHA_RECOLECCION) = TRUNC(p_fecha);
+
+  RETURN NVL(total, 0);
+END;
+
+//SELECT cuartillos_por_fecha(TO_DATE('2025-04-24', 'YYYY-MM-DD')) FROM DUAL;
+
+
+
+CREATE OR REPLACE FUNCTION resumen_recoleccion(p_id_recoleccion NUMBER)
+RETURN VARCHAR2
+IS
+  resumen VARCHAR2(500);
+BEGIN
+  SELECT 'Recolector: ' || IDENTIFICACION_RECOLECTOR || 
+         ', Finca: ' || NO_FINCA || 
+         ', Fecha: ' || TO_CHAR(FECHA_RECOLECCION, 'YYYY-MM-DD') || 
+         ', Pago: $' || TO_CHAR(PAGO_TOTAL, '9999.99')
+  INTO resumen
+  FROM RECOLECCION
+  WHERE ID_RECOLECCION = p_id_recoleccion;
+
+  RETURN resumen;
+END;
+
+
+
+//SELECT resumen_recoleccion(10) FROM DUAL;
+
+
+

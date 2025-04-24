@@ -1,0 +1,137 @@
+﻿--tabla vehiculos
+
+-- 1. Obtener la marca de un vehículo por su placa
+CREATE OR REPLACE FUNCTION FN_GET_MARCA_VEHICULO(pPlaca IN VARCHAR2)
+RETURN VARCHAR2 IS
+    vMarca VARCHAR2(100);
+BEGIN
+    SELECT Marca_Vehiculo INTO vMarca
+    FROM Vehiculos
+    WHERE Placa_Vehiculo = pPlaca;
+
+    RETURN vMarca;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RETURN 'NO EXISTE';
+END;
+/
+
+-- 2. Verificar si existe una placa
+CREATE OR REPLACE FUNCTION FN_EXISTE_PLACA(pPlaca IN VARCHAR2)
+RETURN NUMBER IS
+    vExiste NUMBER := 0;
+BEGIN
+    SELECT COUNT(*) INTO vExiste
+    FROM Vehiculos
+    WHERE Placa_Vehiculo = pPlaca;
+
+    RETURN vExiste; -- 0 si no existe, >0 si existe
+END;
+/
+
+--tabla mantenimiento
+
+-- 1. Obtener el costo total de los mantenimientos de un vehículo
+CREATE OR REPLACE FUNCTION FN_COSTO_TOTAL_MANTENIMIENTOS(pPlaca IN VARCHAR2)
+RETURN NUMBER IS
+    vTotal NUMBER := 0;
+BEGIN
+    SELECT NVL(SUM(Costo_Mantenimiento), 0) INTO vTotal
+    FROM Mant_Vehiculos
+    WHERE Placa_Vehiculo = pPlaca;
+
+    RETURN vTotal;
+END;
+/
+
+-- 2. Contar cuántos mantenimientos tiene un vehículo
+CREATE OR REPLACE FUNCTION FN_CONTAR_MANTENIMIENTOS(pPlaca IN VARCHAR2)
+RETURN NUMBER IS
+    vCantidad NUMBER := 0;
+BEGIN
+    SELECT COUNT(*) INTO vCantidad
+    FROM Mant_Vehiculos
+    WHERE Placa_Vehiculo = pPlaca;
+
+    RETURN vCantidad;
+END;
+/
+
+
+
+-- CURSORES PARA LA TABLA VEHICULOS
+
+-- 1. Cursor: listar todos los vehículos
+DECLARE
+    CURSOR cur_vehiculos IS
+        SELECT * FROM Vehiculos;
+
+    vVehiculo Vehiculos%ROWTYPE;
+BEGIN
+    OPEN cur_vehiculos;
+    LOOP
+        FETCH cur_vehiculos INTO vVehiculo;
+        EXIT WHEN cur_vehiculos%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE('Placa: ' || vVehiculo.Placa_Vehiculo || ', Marca: ' || vVehiculo.Marca_Vehiculo);
+    END LOOP;
+    CLOSE cur_vehiculos;
+END;
+/
+
+-- 2. Cursor: vehículos de una marca específica
+DECLARE
+    CURSOR cur_vehiculos_marca(pMarca VARCHAR2) IS
+        SELECT * FROM Vehiculos WHERE Marca_Vehiculo = pMarca;
+
+    vVehiculo Vehiculos%ROWTYPE;
+BEGIN
+    OPEN cur_vehiculos_marca('Toyota');
+    LOOP
+        FETCH cur_vehiculos_marca INTO vVehiculo;
+        EXIT WHEN cur_vehiculos_marca%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE('Placa: ' || vVehiculo.Placa_Vehiculo || ', Modelo: ' || vVehiculo.Modelo_Vehiculo);
+    END LOOP;
+    CLOSE cur_vehiculos_marca;
+END;
+/
+
+-- CURSORES PARA LA TABLA MANT_VEHICULOS
+
+
+-- 3. Cursor: recorrer todos los mantenimientos
+DECLARE
+    CURSOR cur_mantenimientos IS
+        SELECT * FROM Mant_Vehiculos;
+
+    vMant Mant_Vehiculos%ROWTYPE;
+BEGIN
+    OPEN cur_mantenimientos;
+    LOOP
+        FETCH cur_mantenimientos INTO vMant;
+        EXIT WHEN cur_mantenimientos%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE('ID: ' || vMant.Id_Mantenimiento || ', Placa: ' || vMant.Placa_Vehiculo || ', Costo: ' || vMant.Costo_Mantenimiento);
+    END LOOP;
+    CLOSE cur_mantenimientos;
+END;
+/
+
+-- 4. Cursor: mantenimientos de un vehículo específico
+DECLARE
+    CURSOR cur_mant_vehiculo(pPlaca VARCHAR2) IS
+        SELECT * FROM Mant_Vehiculos WHERE Placa_Vehiculo = pPlaca;
+
+    vMant Mant_Vehiculos%ROWTYPE;
+BEGIN
+    OPEN cur_mant_vehiculo('ABC123');
+    LOOP
+        FETCH cur_mant_vehiculo INTO vMant;
+        EXIT WHEN cur_mant_vehiculo%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE('Motivo: ' || vMant.Motivo_Mantenimiento || ', Costo: ' || vMant.Costo_Mantenimiento);
+    END LOOP;
+    CLOSE cur_mant_vehiculo;
+END;
+/
