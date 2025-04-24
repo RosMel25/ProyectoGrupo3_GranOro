@@ -82,7 +82,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     string procedure = procedureName;
                     string[] param = paramNames;
@@ -114,7 +114,7 @@ namespace AccesoDatos.DataBase
                     return DsResultados1.Tables[0];
 
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     string procedure = procedureName;
                     string param = TipoProcedimiento;
@@ -153,7 +153,7 @@ namespace AccesoDatos.DataBase
 
                     return DsResultados1.Tables[0];
                 }
-                catch (Exception e)
+                catch (Exception)
                 {                    
                     return null;
                 }

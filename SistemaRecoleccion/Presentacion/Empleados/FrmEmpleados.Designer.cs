@@ -139,16 +139,17 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(462, 51);
+            this.txtBuscar.Location = new System.Drawing.Point(449, 21);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(351, 52);
             this.txtBuscar.TabIndex = 58;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // txtNoFinca
             // 
-            this.txtNoFinca.Location = new System.Drawing.Point(1256, 401);
+            this.txtNoFinca.Location = new System.Drawing.Point(1215, 401);
             this.txtNoFinca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNoFinca.Multiline = true;
             this.txtNoFinca.Name = "txtNoFinca";
@@ -159,16 +160,17 @@
             // 
             this.Mostrar_Valores.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Mostrar_Valores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Mostrar_Valores.Location = new System.Drawing.Point(372, 139);
+            this.Mostrar_Valores.Location = new System.Drawing.Point(301, 90);
             this.Mostrar_Valores.Name = "Mostrar_Valores";
             this.Mostrar_Valores.RowHeadersWidth = 62;
             this.Mostrar_Valores.RowTemplate.Height = 28;
             this.Mostrar_Valores.Size = new System.Drawing.Size(700, 525);
             this.Mostrar_Valores.TabIndex = 61;
+            this.Mostrar_Valores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Mostrar_Valores_CellContentClick);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(603, 680);
+            this.btnEliminar.Location = new System.Drawing.Point(575, 630);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(125, 41);
             this.btnEliminar.TabIndex = 62;
@@ -178,16 +180,17 @@
             // 
             // BtnEditar
             // 
-            this.BtnEditar.Location = new System.Drawing.Point(439, 677);
+            this.BtnEditar.Location = new System.Drawing.Point(411, 627);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(132, 44);
             this.BtnEditar.TabIndex = 63;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.UseVisualStyleBackColor = true;
+            this.BtnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(860, 58);
+            this.BtnBuscar.Location = new System.Drawing.Point(847, 28);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(154, 56);
             this.BtnBuscar.TabIndex = 64;
@@ -198,11 +201,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(332, 76);
+            this.label11.Location = new System.Drawing.Point(319, 46);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 20);
             this.label11.TabIndex = 65;
             this.label11.Text = "N° Empleado:";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -212,6 +216,7 @@
             this.label12.Size = new System.Drawing.Size(27, 20);
             this.label12.TabIndex = 66;
             this.label12.Text = "Id:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -221,6 +226,7 @@
             this.label13.Size = new System.Drawing.Size(69, 20);
             this.label13.TabIndex = 67;
             this.label13.Text = "Nombre:";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -230,6 +236,7 @@
             this.label14.Size = new System.Drawing.Size(69, 20);
             this.label14.TabIndex = 68;
             this.label14.Text = "Apellido:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label15
             // 
@@ -239,6 +246,7 @@
             this.label15.Size = new System.Drawing.Size(52, 20);
             this.label15.TabIndex = 69;
             this.label15.Text = "Email:";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label16
             // 
@@ -248,6 +256,7 @@
             this.label16.Size = new System.Drawing.Size(75, 20);
             this.label16.TabIndex = 70;
             this.label16.Text = "Teléfono:";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -257,6 +266,7 @@
             this.label17.Size = new System.Drawing.Size(62, 20);
             this.label17.TabIndex = 71;
             this.label17.Text = "Salario:";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label18
             // 
@@ -266,6 +276,7 @@
             this.label18.Size = new System.Drawing.Size(81, 20);
             this.label18.TabIndex = 72;
             this.label18.Text = "Id Puesto:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label19
             // 
@@ -275,59 +286,60 @@
             this.label19.Size = new System.Drawing.Size(70, 20);
             this.label19.TabIndex = 73;
             this.label19.Text = "Id Finca:";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1277, 58);
+            this.textBox2.Location = new System.Drawing.Point(1236, 58);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(104, 26);
             this.textBox2.TabIndex = 74;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(1277, 106);
+            this.textBox3.Location = new System.Drawing.Point(1236, 106);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 26);
             this.textBox3.TabIndex = 75;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(1277, 155);
+            this.textBox4.Location = new System.Drawing.Point(1236, 155);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 26);
             this.textBox4.TabIndex = 76;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1277, 260);
+            this.textBox5.Location = new System.Drawing.Point(1236, 260);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 26);
             this.textBox5.TabIndex = 77;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(1277, 205);
+            this.textBox6.Location = new System.Drawing.Point(1236, 205);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 26);
             this.textBox6.TabIndex = 78;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(1277, 308);
+            this.textBox7.Location = new System.Drawing.Point(1236, 308);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(100, 26);
             this.textBox7.TabIndex = 79;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(1277, 352);
+            this.textBox9.Location = new System.Drawing.Point(1236, 352);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 26);
             this.textBox9.TabIndex = 80;
             // 
             // BtnGuardar
             // 
-            this.BtnGuardar.Location = new System.Drawing.Point(750, 680);
+            this.BtnGuardar.Location = new System.Drawing.Point(722, 630);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(152, 41);
             this.BtnGuardar.TabIndex = 81;
@@ -337,160 +349,174 @@
             // 
             // btnVerEmpleadosXPuesto
             // 
-            this.btnVerEmpleadosXPuesto.Location = new System.Drawing.Point(30, 699);
+            this.btnVerEmpleadosXPuesto.Location = new System.Drawing.Point(30, 677);
             this.btnVerEmpleadosXPuesto.Name = "btnVerEmpleadosXPuesto";
             this.btnVerEmpleadosXPuesto.Size = new System.Drawing.Size(161, 54);
             this.btnVerEmpleadosXPuesto.TabIndex = 82;
             this.btnVerEmpleadosXPuesto.Text = "Empleados Por Puesto";
             this.btnVerEmpleadosXPuesto.UseVisualStyleBackColor = true;
+            this.btnVerEmpleadosXPuesto.Click += new System.EventHandler(this.btnVerEmpleadosXPuesto_Click_1);
             // 
             // btnVerContactos
             // 
-            this.btnVerContactos.Location = new System.Drawing.Point(30, 654);
+            this.btnVerContactos.Location = new System.Drawing.Point(30, 632);
             this.btnVerContactos.Name = "btnVerContactos";
             this.btnVerContactos.Size = new System.Drawing.Size(161, 39);
             this.btnVerContactos.TabIndex = 84;
             this.btnVerContactos.Text = "Contactos";
             this.btnVerContactos.UseVisualStyleBackColor = true;
+            this.btnVerContactos.Click += new System.EventHandler(this.btnVerContactos_Click_1);
             // 
             // btnMayorSalario
             // 
-            this.btnMayorSalario.Location = new System.Drawing.Point(30, 611);
+            this.btnMayorSalario.Location = new System.Drawing.Point(30, 589);
             this.btnMayorSalario.Name = "btnMayorSalario";
             this.btnMayorSalario.Size = new System.Drawing.Size(161, 38);
             this.btnMayorSalario.TabIndex = 85;
             this.btnMayorSalario.Text = "Mayor Salario";
             this.btnMayorSalario.UseVisualStyleBackColor = true;
+            this.btnMayorSalario.Click += new System.EventHandler(this.btnMayorSalario_Click_1);
             // 
             // btnListarEmails
             // 
-            this.btnListarEmails.Location = new System.Drawing.Point(30, 567);
+            this.btnListarEmails.Location = new System.Drawing.Point(30, 545);
             this.btnListarEmails.Name = "btnListarEmails";
             this.btnListarEmails.Size = new System.Drawing.Size(161, 37);
             this.btnListarEmails.TabIndex = 86;
             this.btnListarEmails.Text = "Listar Emails";
             this.btnListarEmails.UseVisualStyleBackColor = true;
+            this.btnListarEmails.Click += new System.EventHandler(this.btnListarEmails_Click_1);
             // 
             // btnSalarioPromedio
             // 
-            this.btnSalarioPromedio.Location = new System.Drawing.Point(30, 510);
+            this.btnSalarioPromedio.Location = new System.Drawing.Point(30, 488);
             this.btnSalarioPromedio.Name = "btnSalarioPromedio";
             this.btnSalarioPromedio.Size = new System.Drawing.Size(161, 47);
             this.btnSalarioPromedio.TabIndex = 87;
             this.btnSalarioPromedio.Text = "Salario Promedio";
             this.btnSalarioPromedio.UseVisualStyleBackColor = true;
+            this.btnSalarioPromedio.Click += new System.EventHandler(this.btnSalarioPromedio_Click_1);
             // 
             // btnContarRangoSalario
             // 
-            this.btnContarRangoSalario.Location = new System.Drawing.Point(30, 454);
+            this.btnContarRangoSalario.Location = new System.Drawing.Point(30, 432);
             this.btnContarRangoSalario.Name = "btnContarRangoSalario";
             this.btnContarRangoSalario.Size = new System.Drawing.Size(161, 50);
             this.btnContarRangoSalario.TabIndex = 88;
             this.btnContarRangoSalario.Text = "Contar Rango Salario";
             this.btnContarRangoSalario.UseVisualStyleBackColor = true;
+            this.btnContarRangoSalario.Click += new System.EventHandler(this.btnContarRangoSalario_Click_1);
             // 
             // btnCorreoInstitucional
             // 
-            this.btnCorreoInstitucional.Location = new System.Drawing.Point(30, 401);
+            this.btnCorreoInstitucional.Location = new System.Drawing.Point(30, 379);
             this.btnCorreoInstitucional.Name = "btnCorreoInstitucional";
             this.btnCorreoInstitucional.Size = new System.Drawing.Size(161, 44);
             this.btnCorreoInstitucional.TabIndex = 89;
             this.btnCorreoInstitucional.Text = "Correo Institucional";
             this.btnCorreoInstitucional.UseVisualStyleBackColor = true;
+            this.btnCorreoInstitucional.Click += new System.EventHandler(this.btnCorreoInstitucional_Click_1);
             // 
             // btnTotalPorFinca
             // 
-            this.btnTotalPorFinca.Location = new System.Drawing.Point(30, 349);
+            this.btnTotalPorFinca.Location = new System.Drawing.Point(30, 327);
             this.btnTotalPorFinca.Name = "btnTotalPorFinca";
             this.btnTotalPorFinca.Size = new System.Drawing.Size(161, 43);
             this.btnTotalPorFinca.TabIndex = 90;
             this.btnTotalPorFinca.Text = "Total Por Finca";
             this.btnTotalPorFinca.UseVisualStyleBackColor = true;
+            this.btnTotalPorFinca.Click += new System.EventHandler(this.btnTotalPorFinca_Click_1);
             // 
             // btnNombreCompleto
             // 
-            this.btnNombreCompleto.Location = new System.Drawing.Point(30, 300);
+            this.btnNombreCompleto.Location = new System.Drawing.Point(30, 278);
             this.btnNombreCompleto.Name = "btnNombreCompleto";
             this.btnNombreCompleto.Size = new System.Drawing.Size(161, 43);
             this.btnNombreCompleto.TabIndex = 91;
             this.btnNombreCompleto.Text = "Nombre Completo";
             this.btnNombreCompleto.UseVisualStyleBackColor = true;
+            this.btnNombreCompleto.Click += new System.EventHandler(this.btnNombreCompleto_Click_1);
             // 
             // btnTotalSalarios
             // 
-            this.btnTotalSalarios.Location = new System.Drawing.Point(30, 264);
+            this.btnTotalSalarios.Location = new System.Drawing.Point(30, 242);
             this.btnTotalSalarios.Name = "btnTotalSalarios";
             this.btnTotalSalarios.Size = new System.Drawing.Size(161, 28);
             this.btnTotalSalarios.TabIndex = 92;
             this.btnTotalSalarios.Text = "Total Salarios";
             this.btnTotalSalarios.UseVisualStyleBackColor = true;
+            this.btnTotalSalarios.Click += new System.EventHandler(this.btnTotalSalarios_Click_1);
             // 
             // btnBuscarPorNombre
             // 
-            this.btnBuscarPorNombre.Location = new System.Drawing.Point(30, 205);
+            this.btnBuscarPorNombre.Location = new System.Drawing.Point(30, 183);
             this.btnBuscarPorNombre.Name = "btnBuscarPorNombre";
             this.btnBuscarPorNombre.Size = new System.Drawing.Size(161, 53);
             this.btnBuscarPorNombre.TabIndex = 93;
             this.btnBuscarPorNombre.Text = "Buscar Por Nombre";
             this.btnBuscarPorNombre.UseVisualStyleBackColor = true;
+            this.btnBuscarPorNombre.Click += new System.EventHandler(this.btnBuscarPorNombre_Click_1);
             // 
             // btnEliminarSalarioBajo
             // 
-            this.btnEliminarSalarioBajo.Location = new System.Drawing.Point(30, 139);
+            this.btnEliminarSalarioBajo.Location = new System.Drawing.Point(30, 117);
             this.btnEliminarSalarioBajo.Name = "btnEliminarSalarioBajo";
             this.btnEliminarSalarioBajo.Size = new System.Drawing.Size(161, 54);
             this.btnEliminarSalarioBajo.TabIndex = 94;
             this.btnEliminarSalarioBajo.Text = "Eliminar Salario Bajo";
             this.btnEliminarSalarioBajo.UseVisualStyleBackColor = true;
+            this.btnEliminarSalarioBajo.Click += new System.EventHandler(this.btnEliminarSalarioBajo_Click_1);
             // 
             // btnContar
             // 
-            this.btnContar.Location = new System.Drawing.Point(30, 82);
+            this.btnContar.Location = new System.Drawing.Point(30, 60);
             this.btnContar.Name = "btnContar";
             this.btnContar.Size = new System.Drawing.Size(161, 44);
             this.btnContar.TabIndex = 95;
             this.btnContar.Text = "Contar";
             this.btnContar.UseVisualStyleBackColor = true;
+            this.btnContar.Click += new System.EventHandler(this.btnContar_Click_1);
             // 
             // btnBuscarSalarioAlto
             // 
-            this.btnBuscarSalarioAlto.Location = new System.Drawing.Point(30, 31);
+            this.btnBuscarSalarioAlto.Location = new System.Drawing.Point(30, 9);
             this.btnBuscarSalarioAlto.Name = "btnBuscarSalarioAlto";
             this.btnBuscarSalarioAlto.Size = new System.Drawing.Size(161, 43);
             this.btnBuscarSalarioAlto.TabIndex = 96;
             this.btnBuscarSalarioAlto.Text = "Buscar Salario Alto";
             this.btnBuscarSalarioAlto.UseVisualStyleBackColor = true;
+            this.btnBuscarSalarioAlto.Click += new System.EventHandler(this.btnBuscarSalarioAlto_Click_1);
             // 
             // txtBuscarSalario
             // 
-            this.txtBuscarSalario.Location = new System.Drawing.Point(1215, 454);
+            this.txtBuscarSalario.Location = new System.Drawing.Point(1127, 461);
             this.txtBuscarSalario.Name = "txtBuscarSalario";
-            this.txtBuscarSalario.Size = new System.Drawing.Size(236, 26);
+            this.txtBuscarSalario.Size = new System.Drawing.Size(213, 26);
             this.txtBuscarSalario.TabIndex = 97;
             this.txtBuscarSalario.Text = "Digitar aquí consulta por salario";
             this.txtBuscarSalario.TextChanged += new System.EventHandler(this.txtBuscarSalario_TextChanged);
             // 
             // txtSalarioMin
             // 
-            this.txtSalarioMin.Location = new System.Drawing.Point(1239, 505);
+            this.txtSalarioMin.Location = new System.Drawing.Point(1151, 512);
             this.txtSalarioMin.Name = "txtSalarioMin";
-            this.txtSalarioMin.Size = new System.Drawing.Size(212, 26);
+            this.txtSalarioMin.Size = new System.Drawing.Size(189, 26);
             this.txtSalarioMin.TabIndex = 98;
             this.txtSalarioMin.Text = "Digitar aquí salario mínimo";
             // 
             // txtSalarioMax
             // 
-            this.txtSalarioMax.Location = new System.Drawing.Point(1239, 542);
+            this.txtSalarioMax.Location = new System.Drawing.Point(1151, 549);
             this.txtSalarioMax.Name = "txtSalarioMax";
-            this.txtSalarioMax.Size = new System.Drawing.Size(212, 26);
+            this.txtSalarioMax.Size = new System.Drawing.Size(189, 26);
             this.txtSalarioMax.TabIndex = 99;
             this.txtSalarioMax.Text = "Digitar aquí salario máximo";
             // 
             // txtIdCorreo
             // 
-            this.txtIdCorreo.Location = new System.Drawing.Point(1239, 588);
+            this.txtIdCorreo.Location = new System.Drawing.Point(1151, 595);
             this.txtIdCorreo.Name = "txtIdCorreo";
-            this.txtIdCorreo.Size = new System.Drawing.Size(212, 26);
+            this.txtIdCorreo.Size = new System.Drawing.Size(189, 26);
             this.txtIdCorreo.TabIndex = 100;
             this.txtIdCorreo.Text = "Digitar aquí Email";
             this.txtIdCorreo.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
@@ -498,15 +524,16 @@
             // lblResultadoRango
             // 
             this.lblResultadoRango.AutoSize = true;
-            this.lblResultadoRango.Location = new System.Drawing.Point(1087, 524);
+            this.lblResultadoRango.Location = new System.Drawing.Point(1007, 536);
             this.lblResultadoRango.Name = "lblResultadoRango";
             this.lblResultadoRango.Size = new System.Drawing.Size(138, 20);
             this.lblResultadoRango.TabIndex = 101;
             this.lblResultadoRango.Text = "Resultado Rango:";
+            this.lblResultadoRango.Click += new System.EventHandler(this.lblResultadoRango_Click);
             // 
             // FrmEmpleados
             // 
-            this.ClientSize = new System.Drawing.Size(1493, 772);
+            this.ClientSize = new System.Drawing.Size(1375, 748);
             this.Controls.Add(this.Mostrar_Valores);
             this.Controls.Add(this.lblResultadoRango);
             this.Controls.Add(this.txtIdCorreo);
@@ -551,6 +578,7 @@
             this.Controls.Add(this.txtBuscar);
             this.Name = "FrmEmpleados";
             this.Text = "FrmEmpleados";
+            this.Load += new System.EventHandler(this.FrmEmpleados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Mostrar_Valores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

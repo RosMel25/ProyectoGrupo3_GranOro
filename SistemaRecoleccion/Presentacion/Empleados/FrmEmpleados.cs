@@ -40,8 +40,7 @@ namespace Presentacion.Empleados
         {
             return EmpleadoInfo.ObtenerEmpleados();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void BtnGuardar_Click_1(object sender, EventArgs e)
         {
             string id = txtId.Text;
             string nombre = txtNombre.Text;
@@ -57,13 +56,18 @@ namespace Presentacion.Empleados
             {
                 try
                 {
+                    if (!Regex.IsMatch(id, "^[0-9]+$"))
+                    {
+                        MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtId.Text = "";
+                    }
+
                     if (id.Equals("") || nombre.Equals ("") || apellido.Equals("") || email.Equals("") || telefono.Equals("") || salario.Equals("") || idPuesto.Equals("") || idFinca.Equals(""))
                     {
-                        MessageBox.Show("Todos los campos deben estar completos", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Todos los campos deben estar completos", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
-
                         int id_ = int.Parse(id);
                         EmpleadoInfo.AgregarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, Id_Puesto_Empleado = idPuesto, No_Finca = idFinca });
                         MessageBox.Show("Empleado Registrado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,16 +86,24 @@ namespace Presentacion.Empleados
             // Editar Registro Existente
             if (Editar == true)
             {
+                txtId.Enabled = true;
+
                 try
                 {
+                    if (!Regex.IsMatch(id, "^[0-9]+$"))
+                    {
+                        MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtId.Text = "";
+                    }
+
                     if (id.Equals("") || nombre.Equals("") || apellido.Equals("") || email.Equals("") || telefono.Equals("") || salario.Equals("") || idPuesto.Equals("") || idFinca.Equals(""))
                     {
-                        MessageBox.Show("Todos los espacios deben estar completos", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Todos los espacios deben estar completos", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
                         int id_ = int.Parse(id);
-                        EmpleadoInfo.AgregarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, Id_Puesto_Empleado = idPuesto, No_Finca = idFinca });
+                        EmpleadoInfo.EditarEmpleado(new Entidad.ClsEmpleado { Id_Empleado = id_, Nom_Empleado = nombre, Ape_Empleado = apellido, Email_Empleado = email, Tel_Empleado = telefono, Sal_Empleado = salario, Id_Puesto_Empleado = idPuesto, No_Finca = idFinca });
                         MessageBox.Show("Empleado Actualizado", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         limpiarForm();
@@ -105,10 +117,11 @@ namespace Presentacion.Empleados
 
                 }
             }
-        }                   
-
-        private void btnEditar(object sender, EventArgs e)
+        }
+        private void BtnEditar_Click(object sender, EventArgs e)
         {
+            txtId.Enabled = false;
+
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
                 Editar = true;
@@ -126,8 +139,7 @@ namespace Presentacion.Empleados
                 MessageBox.Show("Debe seleccionar un registro a editar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void BtnEliminar(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
@@ -144,6 +156,7 @@ namespace Presentacion.Empleados
                     MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
+
         }
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -167,7 +180,7 @@ namespace Presentacion.Empleados
             }
         }
 
-        private void btnBuscarSalarioAlto_Click(object sender, EventArgs e)
+        private void btnBuscarSalarioAlto_Click_1(object sender, EventArgs e)
         {
             decimal salarioMin;
             if (decimal.TryParse(txtBuscarSalario.Text, out salarioMin))
@@ -176,7 +189,7 @@ namespace Presentacion.Empleados
                 MessageBox.Show("Ingrese un salario válido.");
         }
 
-        private void btnContar_Click(object sender, EventArgs e)
+        private void btnContar_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtIdPuesto.Text, out int idPuesto))
             {
@@ -185,7 +198,7 @@ namespace Presentacion.Empleados
             }
         }
 
-        private void btnEliminarSalarioBajo_Click(object sender, EventArgs e)
+        private void btnEliminarSalarioBajo_Click_1(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtSalario.Text, out decimal salarioLimite))
             {
@@ -193,71 +206,64 @@ namespace Presentacion.Empleados
                 Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleados();
             }
         }
-
-        private void btnBuscarPorNombre_Click(object sender, EventArgs e)
+        private void btnBuscarPorNombre_Click_1(object sender, EventArgs e)
         {
             string nombreBuscar = txtNombre.Text.Trim();
             Mostrar_Valores.DataSource = EmpleadoInfo.BuscarEmpleadosPorNombre(nombreBuscar);
         }
 
-        private void btnTotalSalarios_Click(object sender, EventArgs e)
+        private void btnTotalSalarios_Click_1(object sender, EventArgs e)
         {
             decimal total = EmpleadoInfo.ObtenerSalarioTotal();
             MessageBox.Show($"Salario total: ₡{total:N2}");
         }
 
-        private void btnNombreCompleto_Click(object sender, EventArgs e)
+        private void btnNombreCompleto_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtId.Text, out int id))
                 MessageBox.Show("Nombre completo: " + EmpleadoInfo.ObtenerNombreCompletoPorID(id));
         }
-
-        private void btnTotalPorFinca_Click(object sender, EventArgs e)
+        private void btnTotalPorFinca_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtIdFinca.Text, out int noFinca))
                 MessageBox.Show($"Total por finca: {EmpleadoInfo.TotalEmpleadosPorFinca(noFinca)}");
         }
-
-        private void btnCorreoInstitucional_Click(object sender, EventArgs e)
+        private void btnCorreoInstitucional_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtIdCorreo.Text, out int id))
                 MessageBox.Show("Correo institucional: " + EmpleadoInfo.TieneCorreoInstitucional(id));
         }
-
-        private void btnContarRangoSalario_Click(object sender, EventArgs e)
+        private void btnContarRangoSalario_Click_1(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtSalarioMin.Text, out decimal min) &&
                 decimal.TryParse(txtSalarioMax.Text, out decimal max))
                 lblResultadoRango.Text = $"Total en rango: {EmpleadoInfo.ContarEmpleadosEnRango(min, max)}";
         }
 
-        private void btnSalarioPromedio_Click(object sender, EventArgs e)
+        private void btnSalarioPromedio_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtIdPuesto.Text, out int idPuesto))
                 MessageBox.Show($"Promedio: ₡{EmpleadoInfo.ObtenerSalarioPromedioPorPuesto(idPuesto):N2}");
         }
-
-        private void btnListarEmails_Click(object sender, EventArgs e)
+        private void btnListarEmails_Click_1(object sender, EventArgs e)
         {
             Mostrar_Valores.DataSource = EmpleadoInfo.ListarNombreEmailEmpleados();
         }
-
-        private void btnMayorSalario_Click(object sender, EventArgs e)
+        private void btnMayorSalario_Click_1(object sender, EventArgs e)
         {
             Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleadosMayorSalario();
         }
-
-        private void btnVerContactos_Click(object sender, EventArgs e)
+        private void btnVerContactos_Click_1(object sender, EventArgs e)
         {
             Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerContactosDeEmpleados();
         }
 
-        private void btnVerEmpleadosXPuesto_Click(object sender, EventArgs e)
+        private void btnVerEmpleadosXPuesto_Click_1(object sender, EventArgs e)
         {
             Mostrar_Valores.DataSource = EmpleadoInfo.ObtenerEmpleadosPorPuesto();
         }
 
-        public void DiseñoGriew()
+        private void Mostrar_Valores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Mostrar_Valores.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Coral;
             Mostrar_Valores.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -280,19 +286,68 @@ namespace Presentacion.Empleados
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnGuardar_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        }       
 
         private void txtBuscarSalario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void FrmEmpleados_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResultadoRango_Click(object sender, EventArgs e)
         {
 
         }

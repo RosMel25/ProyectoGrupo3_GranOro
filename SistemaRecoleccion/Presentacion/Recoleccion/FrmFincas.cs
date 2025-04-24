@@ -58,7 +58,7 @@ namespace Presentacion.Recoleccion
                     }
                     if (cod.Equals("") || Nom.Equals("") || Tam.Equals("") || Ubi.Equals(""))
                     {
-                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
@@ -89,7 +89,7 @@ namespace Presentacion.Recoleccion
                     }
                     if (cod.Equals("") || Nom.Equals("") || Tam.Equals("") || Ubi.Equals(""))
                     {
-                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Resultao de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Resultado de Ejecución", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {

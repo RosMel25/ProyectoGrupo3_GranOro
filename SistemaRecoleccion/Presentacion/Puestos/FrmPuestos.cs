@@ -36,7 +36,7 @@ namespace Presentacion.Puestos
             return PuestoInfo.ObtenerPuestos();
         }
 
-        private void btnGuardar_click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             string id = txtId.Text;
             string nombre = txtNombre.Text;
@@ -49,6 +49,12 @@ namespace Presentacion.Puestos
             {
                 try
                 {
+                    if (!Regex.IsMatch(id, "^[0-9]+$"))
+                    {
+                        MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtId.Text = "";
+
+                    }
                     if (id.Equals("") || nombre.Equals("") || minSalario.Equals("") || maxSalario.Equals(""))
                     {
                         MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -73,8 +79,14 @@ namespace Presentacion.Puestos
             // Editar Registro Existente
             if (Editar == true)
             {
+                txtId.Enabled = true;
                 try
                 {
+                    if (!Regex.IsMatch(id, "^[0-9]+$"))
+                    {
+                        MessageBox.Show("Por favor, ingrese solo números.", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txtId.Text = "";
+                    }
                     if (id.Equals("") || nombre.Equals("") || minSalario.Equals("") || maxSalario.Equals(""))
                     {
                         MessageBox.Show("TODOS LOS ESPACIOS DEBEN ESTAR COMPLETOS", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,22 +111,21 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnEditar_click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             if (Mostrar_Valores.SelectedRows.Count > 0)
             {
                 Editar = true;
-            txtId.Text = Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString();
-            txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["Nom_Puesto"].Value.ToString();
-            txtMinSalario.Text = Mostrar_Valores.CurrentRow.Cells["MINSal_Puesto"].Value.ToString();
-            txtMaxSalario.Text = Mostrar_Valores.CurrentRow.Cells["MAXSal_Puesto"].Value.ToString();
+                txtId.Text = Mostrar_Valores.CurrentRow.Cells["Id_Puesto"].Value.ToString();
+                txtNombre.Text = Mostrar_Valores.CurrentRow.Cells["Nom_Puesto"].Value.ToString();
+                txtMinSalario.Text = Mostrar_Valores.CurrentRow.Cells["MINSal_Puesto"].Value.ToString();
+                txtMaxSalario.Text = Mostrar_Valores.CurrentRow.Cells["MAXSal_Puesto"].Value.ToString();
            
             }
             else
                 MessageBox.Show("Debe seleccionar el registro a editar", "Error de Validación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }        
-
-        private void btnEliminar_click(object sender, EventArgs e)
+        }
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {         
 
 
@@ -136,8 +147,7 @@ namespace Presentacion.Puestos
             }
         }
 
-
-        private void btnBuscar_click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             if (int.TryParse(txtBuscar.Text, out int id))
             {
@@ -159,7 +169,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnAumentarSalario_click(object sender, EventArgs e)
+        private void btnAumentarSalario_Click_1(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtPorcentajeAumento.Text, out decimal porcentaje))
             {
@@ -173,7 +183,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnUnificarSalarioMinimo_click(object sender, EventArgs e)
+        private void btnUnificarSalarioMinimo_Click_1(object sender, EventArgs e)
         {
             if (decimal.TryParse(txtSalarioUnificado.Text, out decimal salario))
             {
@@ -187,7 +197,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnVerPuestosConMuchosEmpleados(object sender, EventArgs e)
+        private void btnVerPuestoConMuchosEmpleados_Click(object sender, EventArgs e)
         {
             if (int.TryParse(txtMinEmpleados.Text, out int cantidad))
             {
@@ -199,7 +209,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void btnVerCantidadEmpleados_click(object sender, EventArgs e)
+        private void btnVerCantidadEmpleados_Click_1(object sender, EventArgs e)
         {
             DataTable resultado = PuestoInfo.ObtenerPuestosCantidad();
 
@@ -215,7 +225,7 @@ namespace Presentacion.Puestos
 
         #region Validaciones y Diseños
 
-        public void DiseñoGriew()
+        private void Mostrar_Valores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Mostrar_Valores.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Coral;
             Mostrar_Valores.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
@@ -235,7 +245,7 @@ namespace Presentacion.Puestos
             Mostrar_Valores.BorderStyle = BorderStyle.Fixed3D;
         }
 
-        private void txtId_TextChanged(object sender, EventArgs e)
+        private void txtId_TextChanged_1(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(txtId.Text, "^[0-9]*$"))
             {
@@ -244,7 +254,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void txtMinSalario_TextChanged(object sender, EventArgs e)
+        private void txtMinSalario_TextChanged_1(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(txtMinSalario.Text, "^[0-9]+(\\.[0-9]{1,2})?$"))
             {
@@ -253,7 +263,7 @@ namespace Presentacion.Puestos
             }
         }
 
-        private void txtMaxSalario_TextChanged(object sender, EventArgs e)
+        private void txtMaxSalario_TextChanged_1(object sender, EventArgs e)
         {
             if (!Regex.IsMatch(txtMaxSalario.Text, "^[0-9]+(\\.[0-9]{1,2})?$"))
             {
@@ -269,12 +279,71 @@ namespace Presentacion.Puestos
 
         }
 
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIdPuesto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombrePuesto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPorcentajeAumento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalarioUnificado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMinEmpleados_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

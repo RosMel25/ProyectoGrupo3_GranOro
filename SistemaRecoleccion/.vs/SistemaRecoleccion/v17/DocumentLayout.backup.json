@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|c:\\users\\roble\\source\\repos\\rosmel25\\proyectogrupo3_granoro\\sistemarecoleccion\\presentacion\\empleados\\frmempleados.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\empleados\\frmempleados.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\logicanegocio\\puestoln\\puestoln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|solutionrelative:logicanegocio\\puestoln\\puestoln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|c:\\users\\roble\\source\\repos\\rosmel25\\proyectogrupo3_granoro\\sistemarecoleccion\\presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|c:\\users\\roble\\source\\repos\\rosmel25\\proyectogrupo3_granoro\\sistemarecoleccion\\presentacion\\puestos\\frmpuestos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\puestos\\frmpuestos.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\puestos\\frmpuestos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{260E0314-C25C-4E53-AAB0-62DFD381A7F8}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\empleados\\frmempleados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71E55340-8A7E-4585-BD19-10618EAC0437}|Entidad\\Entidad.csproj|c:\\users\\roble\\source\\repos\\rosmel25\\proyectogrupo3_granoro\\sistemarecoleccion\\entidad\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\logicanegocio\\empleadoln\\empleadoln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E153101C-4079-408D-8A52-8173AB513F4D}|LogicaNegocio\\LogicaNegocio.csproj|solutionrelative:logicanegocio\\empleadoln\\empleadoln.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71E55340-8A7E-4585-BD19-10618EAC0437}|Entidad\\Entidad.csproj|C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\entidad\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71E55340-8A7E-4585-BD19-10618EAC0437}|Entidad\\Entidad.csproj|solutionrelative:entidad\\clsempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71E55340-8A7E-4585-BD19-10618EAC0437}|Entidad\\Entidad.csproj|c:\\users\\roble\\source\\repos\\rosmel25\\proyectogrupo3_granoro\\sistemarecoleccion\\entidad\\clspuesto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71E55340-8A7E-4585-BD19-10618EAC0437}|Entidad\\Entidad.csproj|solutionrelative:entidad\\clspuesto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 90,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "FrmEmpleados.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.cs",
               "RelativeDocumentMoniker": "Presentacion\\Empleados\\FrmEmpleados.cs",
@@ -58,60 +54,12 @@
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmEmpleados.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.Designer.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Empleados\\FrmEmpleados.Designer.cs",
-              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.Designer.cs",
-              "RelativeToolTip": "Presentacion\\Empleados\\FrmEmpleados.Designer.cs",
-              "ViewState": "AgIAABUBAAAAAAAAAAAkwCQBAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T06:04:58.5Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmEmpleados.cs",
-              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Empleados\\FrmEmpleados.cs",
-              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.cs",
-              "RelativeToolTip": "Presentacion\\Empleados\\FrmEmpleados.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T00:12:28.518Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmPuestos.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.Designer.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Puestos\\FrmPuestos.Designer.cs",
-              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.Designer.cs",
-              "RelativeToolTip": "Presentacion\\Puestos\\FrmPuestos.Designer.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAD4v3QAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T08:02:24.753Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmPuestos.cs",
-              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Puestos\\FrmPuestos.cs",
-              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.cs",
-              "RelativeToolTip": "Presentacion\\Puestos\\FrmPuestos.cs",
-              "ViewState": "AgIAAPwAAAAAAAAAAAAAwAIBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T06:32:34.275Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "FrmPuestos.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.cs",
               "RelativeDocumentMoniker": "Presentacion\\Puestos\\FrmPuestos.cs",
@@ -123,15 +71,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ClsPuesto.cs",
-              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Entidad\\ClsPuesto.cs",
-              "RelativeDocumentMoniker": "Entidad\\ClsPuesto.cs",
-              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Entidad\\ClsPuesto.cs",
-              "RelativeToolTip": "Entidad\\ClsPuesto.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FrmEmpleados.cs",
+              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Empleados\\FrmEmpleados.cs",
+              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Empleados\\FrmEmpleados.cs",
+              "RelativeToolTip": "Presentacion\\Empleados\\FrmEmpleados.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T03:57:36.353Z",
+              "WhenOpened": "2025-04-18T00:12:28.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PuestoLN.cs",
+              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\LogicaNegocio\\PuestoLN\\PuestoLN.cs",
+              "RelativeDocumentMoniker": "LogicaNegocio\\PuestoLN\\PuestoLN.cs",
+              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\LogicaNegocio\\PuestoLN\\PuestoLN.cs",
+              "RelativeToolTip": "LogicaNegocio\\PuestoLN\\PuestoLN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:22:59.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmPuestos.cs",
+              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.cs",
+              "RelativeDocumentMoniker": "Presentacion\\Puestos\\FrmPuestos.cs",
+              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Presentacion\\Puestos\\FrmPuestos.cs",
+              "RelativeToolTip": "Presentacion\\Puestos\\FrmPuestos.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAxwHgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T06:32:34.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmpleadoLN.cs",
+              "DocumentMoniker": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\LogicaNegocio\\EmpleadoLN\\EmpleadoLN.cs",
+              "RelativeDocumentMoniker": "LogicaNegocio\\EmpleadoLN\\EmpleadoLN.cs",
+              "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\LogicaNegocio\\EmpleadoLN\\EmpleadoLN.cs",
+              "RelativeToolTip": "LogicaNegocio\\EmpleadoLN\\EmpleadoLN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T05:41:11.158Z",
               "EditorCaption": ""
             },
             {
@@ -142,10 +129,9 @@
               "RelativeDocumentMoniker": "Entidad\\ClsEmpleado.cs",
               "ToolTip": "C:\\Users\\roble\\source\\repos\\RosMel25\\ProyectoGrupo3_GranOro\\SistemaRecoleccion\\Entidad\\ClsEmpleado.cs",
               "RelativeToolTip": "Entidad\\ClsEmpleado.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBQAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T03:57:50.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T03:57:50.222Z"
             }
           ]
         },
