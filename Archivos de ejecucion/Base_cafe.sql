@@ -14,12 +14,12 @@ CREATE TABLE Cortes (
 );
 
 -- 3. Tabla Precio
-CREATE TABLE Precio (
-    Id_Precio INT PRIMARY KEY,
-    Nombre_Categoria VARCHAR(100),
-    Tipo_Moneda VARCHAR(50),
-    Valor_Cafe_Rojo_Cajuelas DECIMAL(10, 2),
-    Valor_Cafe_Verde_Cajuelas DECIMAL(10, 2)
+CREATE TABLE PRECIO (
+    ID_PRECIO        NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    NOMBRE_CATEGORIA VARCHAR2(100),
+    TIPO_MONEDA      VARCHAR2(50),
+    VALOR_CAJUELA    NUMBER,
+    VALOR_CUARTILLO  NUMBER
 );
 
 
@@ -53,7 +53,7 @@ CREATE TABLE Recolector (
 
 -- 7. Tabla Recolección
 CREATE TABLE Recoleccion (
-    Id_Recoleccion INT PRIMARY KEY,
+    ID_RECOLECCION NUMBER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     Identificacion_Recolector INT,
     NO_FINCA INT,
     Id_Corte INT,
@@ -66,7 +66,7 @@ CREATE TABLE Recoleccion (
     FOREIGN KEY (NO_FINCA) REFERENCES FINCA(NO_FINCA),
     FOREIGN KEY (Id_Corte) REFERENCES Cortes(Id_Corte),
     FOREIGN KEY (Id_Precio) REFERENCES Precio(Id_Precio)
-    )
+);
 
 -- 8. Tabla Proveedores
 CREATE TABLE Proveedores (
